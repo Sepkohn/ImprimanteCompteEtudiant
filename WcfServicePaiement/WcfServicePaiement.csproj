@@ -61,9 +61,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="App_Data\PaiementDataBase.mdf" />
+    <Content Include="App_Data\PaiementDataBase_log.ldf">
+      <DependentUpon>PaiementDataBase.mdf</DependentUpon>
     </Content>
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
