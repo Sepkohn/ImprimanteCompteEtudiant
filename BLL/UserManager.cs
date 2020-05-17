@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class UserManager
+    public class UserManager : IUserManager
     {
         private IUserDB UserDb { get; }
 
@@ -21,5 +21,6 @@ namespace BLL
         {
             return UserDb.GetUserById(id);
         }
+
     }
 }

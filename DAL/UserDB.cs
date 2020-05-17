@@ -15,7 +15,7 @@ namespace DAL
         private string connectionString = null;
         public UserDB()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["DemoDB"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ListEtudiants"].ConnectionString;
         }
 
         public User GetUserById(int id)
