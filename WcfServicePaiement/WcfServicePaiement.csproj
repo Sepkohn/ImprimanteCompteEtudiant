@@ -70,19 +70,19 @@
       <DependentUpon>PaiementDataBase.mdf</DependentUpon>
     </Content>
     <Content Include="Service1.svc" />
-    <Content Include="Service2.svc" />
+    <Content Include="Calcul.svc" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IService2.cs" />
+    <Compile Include="ICalcul.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service2.svc.cs">
-      <DependentUpon>Service2.svc</DependentUpon>
+    <Compile Include="Calcul.svc.cs">
+      <DependentUpon>Calcul.svc</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
