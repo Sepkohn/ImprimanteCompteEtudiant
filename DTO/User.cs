@@ -10,5 +10,13 @@ namespace DTO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string UserName { get; set; }
+
+        public int CardId { get; set; }
+
+        public double Balance { get; set; }
     }
 }

@@ -65,17 +65,26 @@
     <Content Include="App_Data\PaiementDataBase_log.ldf">
       <DependentUpon>PaiementDataBase.mdf</DependentUpon>
     </Content>
-    <Content Include="Service1.svc" />
+    <Content Include="PaimentService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="PaimentService.svc.cs">
+      <DependentUpon>PaimentService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IPaiementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{7ea5f44a-dba5-4906-87ca-c74edd288fc9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{17d48342-50cc-487e-a49e-e6074410fe4e}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
