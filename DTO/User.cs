@@ -8,15 +8,17 @@ namespace DTO
 {
     public class User
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
-        public string UserName { get; set; }
+        public int Uid { get; set; }
 
         public int CardId { get; set; }
 
-        public double Balance { get; set; }
+        public string Username { get; set; }
+
+        public decimal Balance { get; set; }
+
+        public override string ToString()
+        {
+            return $"Uid : {Uid}, CardId : {CardId},  Username : {Username}, Balance : {Balance}";
+        }
     }
 }

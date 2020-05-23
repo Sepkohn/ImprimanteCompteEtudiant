@@ -15,10 +15,10 @@ namespace DAL
         private string connectionString = null;
         public UserDB()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PaiementDataBase"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["PaymentDataBase"].ConnectionString;
         }
 
-        public User GetUserById(int id)
+        public User GetUserById(int uid)
         {
             User user = null;
 
@@ -26,28 +26,25 @@ namespace DAL
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM User where Id = @id";
+                    string query = "SELECT * FROM [dbo].[User] WHERE Uid = @uid";
                     SqlCommand cmd = new SqlCommand(query, cn);
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@uid", uid);
                     cn.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read())
                         {
-                            user = new User();
+                            user = new User
+                            {
+                                Uid = (int)dr["Uid"],
 
-                            user.Id = (int)dr["Id"];
-                            user.FirstName = (string)dr["FirstName"];
-                            user.LastName = (string)dr["Lastname"];
+                                CardId = (int)dr["CardId"],
 
-                            if (dr["Username"] != null)
-                                user.UserName = (string)dr["Username"];
+                                Username = (string)dr["Username"],
 
-                            if (dr["CardId"] != null)
-                                user.CardId = (int)dr["CardId"];
-
-                            user.Balance = (double)dr["Balance"];
+                                Balance = (decimal)dr["Balance"]
+                            };
 
                         }
                     }
@@ -65,11 +62,13 @@ namespace DAL
         {
             User user = null;
 
+            connectionString = ConfigurationManager.ConnectionStrings["PaymentDataBase"].ConnectionString;
+
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM User where CardId = @cardId";
+                    string query = "SELECT * FROM [dbo].[User] where CardId = @cardId";
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("@cardId", cardId);
                     cn.Open();
@@ -80,17 +79,13 @@ namespace DAL
                         {
                             user = new User();
 
-                            user.Id = (int)dr["Id"];
-                            user.FirstName = (string)dr["FirstName"];
-                            user.LastName = (string)dr["Lastname"];
+                            user.Uid = (int)dr["Uid"];
 
-                            if (dr["Username"] != null)
-                                user.UserName = (string)dr["Username"];
+                            user.CardId = (int)dr["CardId"];
 
-                            if (dr["CardId"] != null)
-                                user.CardId = (int)dr["CardId"];
+                            user.Username = (string)dr["Username"];
 
-                            user.Balance = (double)dr["Balance"];
+                            user.Balance = (decimal)dr["Balance"];
 
                         }
                     }
@@ -112,7 +107,7 @@ namespace DAL
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM User where Username = @username";
+                    string query = "SELECT * FROM [dbo].[User] where Username = @username";
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("@username", username);
                     cn.Open();
@@ -123,17 +118,13 @@ namespace DAL
                         {
                             user = new User();
 
-                            user.Id = (int)dr["Id"];
-                            user.FirstName = (string)dr["FirstName"];
-                            user.LastName = (string)dr["Lastname"];
+                            user.Uid = (int)dr["Uid"];
 
-                            if (dr["Username"] != null)
-                                user.UserName = (string)dr["Username"];
+                            user.CardId = (int)dr["CardId"];
 
-                            if (dr["CardId"] != null)
-                                user.CardId = (int)dr["CardId"];
+                            user.Username = (string)dr["Username"];
 
-                            user.Balance = (double)dr["Balance"];
+                            user.Balance = (decimal)dr["Balance"];
 
                         }
                     }
@@ -155,9 +146,10 @@ namespace DAL
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE User SET Balance=@balance";
+                    string query = "UPDATE [dbo].[User] SET Balance=@balance WHERE Uid=@uid";
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("@balance", user.Balance);
+                    cmd.Parameters.AddWithValue("@uid", user.Uid);
 
                     cn.Open();
 

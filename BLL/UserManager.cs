@@ -12,19 +12,19 @@ namespace BLL
     {
         private IUserDB UserDb { get; }
 
-        public UserManager(IUserDB userDb)
+        public UserManager()
         {
-            UserDb = userDb;
+            UserDb = new UserDB();
         }
 
-        public User GetUserById(int id)
+        public User GetUserById(int uid)
         {
-            return UserDb.GetUserById(id);
+            return UserDb.GetUserById(uid);
         }
 
-        public User GetUserByCardId(int id)
+        public User GetUserByCardId(int cardId)
         {
-            return UserDb.GetUserByCardId(id);
+            return UserDb.GetUserByCardId(cardId);
         }
 
         public User GetUserByUsername(string username)
@@ -39,7 +39,7 @@ namespace BLL
 
         public String GetBalance(User user)
         {
-            return $"Vous avez un solde de CHF {user.Balance}, soit {(int)(user.Balance / 0.08)} photocopies";
+            return $"Vous avez un solde de CHF {user.Balance}, soit {(int)(user.Balance / (decimal)0.08)} photocopies";
         }
     }
 }

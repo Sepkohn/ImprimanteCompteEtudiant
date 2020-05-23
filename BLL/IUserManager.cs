@@ -4,9 +4,9 @@ namespace BLL
 {
     public interface IUserManager
     {
-        User GetUserById(int id);
+        User GetUserById(int uid);
 
-        User GetUserByCardId(int id);
+        User GetUserByCardId(int cardId);
 
         User GetUserByUsername(string username);
 
