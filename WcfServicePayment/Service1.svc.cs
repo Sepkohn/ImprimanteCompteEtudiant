@@ -14,6 +14,7 @@ namespace WcfServicePayment
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public const double PRICE = 0.08;
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -65,6 +66,15 @@ namespace WcfServicePayment
         {
             user.Balance += credit;
 
+            UserManager.UpdateBalance(user);
+
+            return user.Balance;
+        }
+
+        public decimal Print(User user, int nbCopies)
+        {
+            double cost = PRICE * nbCopies;
+            user.Balance -= (decimal)cost;
             UserManager.UpdateBalance(user);
 
             return user.Balance;

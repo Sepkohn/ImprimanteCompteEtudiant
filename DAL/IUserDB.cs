@@ -10,5 +10,6 @@ namespace DAL
         User GetUserByUsername(string username);
 
         int UpdateBalance(User user);
+
     }
 }

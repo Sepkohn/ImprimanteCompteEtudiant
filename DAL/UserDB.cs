@@ -12,6 +12,8 @@ namespace DAL
 {
     public class UserDB : IUserDB
     {
+        public const double PRICE = 0.08;
+
         private string connectionString = null;
         public UserDB()
         {
@@ -163,6 +165,8 @@ namespace DAL
 
             return result;
         }
+
+  
     }
 }
 

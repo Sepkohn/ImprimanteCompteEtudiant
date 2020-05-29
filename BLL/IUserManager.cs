@@ -14,5 +14,6 @@ namespace BLL
 
         string GetBalance(User user);
 
+
     }
 }

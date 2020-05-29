@@ -16,16 +16,20 @@ namespace ClientConsole
             {
                 Console.WriteLine("Starting the programm");
 
-                User student = myService.GetUserByCardId(256);
+                 User student = myService.GetUserByCardId(256);
+         
 
                 Console.WriteLine($"Here is Student  : {student}");
 
                 myService.AddCredit(student, 20);
 
                 myService.GetBalance(student);
+
+                myService.Print(student, 3);
             }
 
             Console.Read();
+
         }
     }
 }

@@ -36,6 +36,9 @@ namespace WcfServicePayment
 
         [OperationContract]
         void GetBalance(User user);
+
+        [OperationContract]
+        decimal Print(User user, int nbCopies);
     }
 
 
