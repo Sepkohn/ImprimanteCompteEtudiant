@@ -21,11 +21,14 @@ namespace ClientConsole
 
                 Console.WriteLine($"Here is Student  : {student}");
 
-                myService.AddCredit(student, 20);
+                student.Balance = myService.AddCredit(student, 20);
 
-                myService.GetBalance(student);
+                Console.WriteLine(myService.GetBalance(student));
 
-                myService.Print(student, 3);
+                student.Balance = myService.Print(student, 20);
+
+                Console.WriteLine(myService.GetBalance(student));
+
             }
 
             Console.Read();

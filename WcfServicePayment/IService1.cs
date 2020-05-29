@@ -35,10 +35,11 @@ namespace WcfServicePayment
         decimal AddCredit(User user, decimal credit);
 
         [OperationContract]
-        void GetBalance(User user);
+        string GetBalance(User user);
 
         [OperationContract]
         decimal Print(User user, int nbCopies);
+
     }
 
 

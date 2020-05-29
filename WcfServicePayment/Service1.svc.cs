@@ -74,17 +74,17 @@ namespace WcfServicePayment
         public decimal Print(User user, int nbCopies)
         {
             double cost = PRICE * nbCopies;
+
             user.Balance -= (decimal)cost;
+
             UserManager.UpdateBalance(user);
 
             return user.Balance;
         }
 
-        public void GetBalance(User user)
+        public string GetBalance(User user)
         {
-            string message = UserManager.GetBalance(user);
-            Console.WriteLine(message);
-
+            return UserManager.GetBalance(user);
         }
     }
 }

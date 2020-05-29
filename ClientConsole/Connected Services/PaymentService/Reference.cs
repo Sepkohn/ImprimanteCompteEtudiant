@@ -52,10 +52,16 @@ namespace ClientConsole.PaymentService {
         System.Threading.Tasks.Task<decimal> AddCreditAsync(DTO.User user, decimal credit);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBalance", ReplyAction="http://tempuri.org/IService1/GetBalanceResponse")]
-        void GetBalance(DTO.User user);
+        string GetBalance(DTO.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBalance", ReplyAction="http://tempuri.org/IService1/GetBalanceResponse")]
-        System.Threading.Tasks.Task GetBalanceAsync(DTO.User user);
+        System.Threading.Tasks.Task<string> GetBalanceAsync(DTO.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Print", ReplyAction="http://tempuri.org/IService1/PrintResponse")]
+        decimal Print(DTO.User user, int nbCopies);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Print", ReplyAction="http://tempuri.org/IService1/PrintResponse")]
+        System.Threading.Tasks.Task<decimal> PrintAsync(DTO.User user, int nbCopies);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -133,12 +139,20 @@ namespace ClientConsole.PaymentService {
             return base.Channel.AddCreditAsync(user, credit);
         }
         
-        public void GetBalance(DTO.User user) {
-            base.Channel.GetBalance(user);
+        public string GetBalance(DTO.User user) {
+            return base.Channel.GetBalance(user);
         }
         
-        public System.Threading.Tasks.Task GetBalanceAsync(DTO.User user) {
+        public System.Threading.Tasks.Task<string> GetBalanceAsync(DTO.User user) {
             return base.Channel.GetBalanceAsync(user);
+        }
+        
+        public decimal Print(DTO.User user, int nbCopies) {
+            return base.Channel.Print(user, nbCopies);
+        }
+        
+        public System.Threading.Tasks.Task<decimal> PrintAsync(DTO.User user, int nbCopies) {
+            return base.Channel.PrintAsync(user, nbCopies);
         }
     }
 }
