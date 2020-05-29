@@ -3,20 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServicePaiement", "WcfServicePaiement\WcfServicePaiement.csproj", "{98F0DFB4-631E-4DAC-BECF-FA09BD5855C3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{17D48342-50CC-487E-A49E-E6074410FE4E} = {17D48342-50CC-487E-A49E-E6074410FE4E}
-		{7EA5F44A-DBA5-4906-87CA-C74EDD288FC9} = {7EA5F44A-DBA5-4906-87CA-C74EDD288FC9}
-		{344E93DF-4959-41CE-859A-3D0E1621531A} = {344E93DF-4959-41CE-859A-3D0E1621531A}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{17D48342-50CC-487E-A49E-E6074410FE4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{9C824712-B43E-4AE5-9EA3-801E31B79805}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{7EA5F44A-DBA5-4906-87CA-C74EDD288FC9}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsServicePaiement", "WindowsFormsServicePaiement\WindowsFormsServicePaiement.csproj", "{344E93DF-4959-41CE-859A-3D0E1621531A}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsole", "ClientConsole\ClientConsole.csproj", "{6AC5ACE1-6053-41A1-BA68-C13CEB3C64AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServicePayment", "WcfServicePayment\WcfServicePayment.csproj", "{462A31BD-7547-49AE-815C-9821A54384DE}"
+>>>>>>> master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{98F0DFB4-631E-4DAC-BECF-FA09BD5855C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98F0DFB4-631E-4DAC-BECF-FA09BD5855C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98F0DFB4-631E-4DAC-BECF-FA09BD5855C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98F0DFB4-631E-4DAC-BECF-FA09BD5855C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17D48342-50CC-487E-A49E-E6074410FE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17D48342-50CC-487E-A49E-E6074410FE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D48342-50CC-487E-A49E-E6074410FE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,10 +35,21 @@ Global
 		{7EA5F44A-DBA5-4906-87CA-C74EDD288FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EA5F44A-DBA5-4906-87CA-C74EDD288FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EA5F44A-DBA5-4906-87CA-C74EDD288FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{344E93DF-4959-41CE-859A-3D0E1621531A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{344E93DF-4959-41CE-859A-3D0E1621531A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{344E93DF-4959-41CE-859A-3D0E1621531A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{344E93DF-4959-41CE-859A-3D0E1621531A}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{6AC5ACE1-6053-41A1-BA68-C13CEB3C64AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC5ACE1-6053-41A1-BA68-C13CEB3C64AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC5ACE1-6053-41A1-BA68-C13CEB3C64AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC5ACE1-6053-41A1-BA68-C13CEB3C64AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462A31BD-7547-49AE-815C-9821A54384DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462A31BD-7547-49AE-815C-9821A54384DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462A31BD-7547-49AE-815C-9821A54384DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462A31BD-7547-49AE-815C-9821A54384DE}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> master
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
