@@ -41,7 +41,6 @@ namespace WindowsFormsServicePaiement
         /// </summary>
         private void InitializeComponent()
         {
-
             this.etudiant = new System.Windows.Forms.Label();
             this.solde = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,20 +60,21 @@ namespace WindowsFormsServicePaiement
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.soldeValue = new System.Windows.Forms.TextBox();
+            this.closeTransaction = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // etudiant
             // 
             this.etudiant.AutoSize = true;
-            this.etudiant.Location = new System.Drawing.Point(54, 39);
+            this.etudiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.etudiant.Location = new System.Drawing.Point(60, 28);
             this.etudiant.Name = "etudiant";
-            this.etudiant.Size = new System.Drawing.Size(46, 13);
+            this.etudiant.Size = new System.Drawing.Size(86, 24);
             this.etudiant.TabIndex = 0;
             this.etudiant.Text = "Etudiant";
             // 
             // solde
             // 
-            this.solde.AutoSize = true;
             this.solde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solde.Location = new System.Drawing.Point(38, 180);
             this.solde.Name = "solde";
@@ -102,7 +102,7 @@ namespace WindowsFormsServicePaiement
             // 
             // buttonMoins
             // 
-            this.buttonMoins.Location = new System.Drawing.Point(574, 277);
+            this.buttonMoins.Location = new System.Drawing.Point(593, 277);
             this.buttonMoins.Name = "buttonMoins";
             this.buttonMoins.Size = new System.Drawing.Size(75, 23);
             this.buttonMoins.TabIndex = 2;
@@ -116,128 +116,150 @@ namespace WindowsFormsServicePaiement
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(38, 276);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 24);
+            this.label4.Size = new System.Drawing.Size(197, 24);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Nombre de copie";
+            this.label4.Text = "Nombre de copie(s)";
             // 
             // studentName
             // 
+            this.studentName.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.studentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentName.Location = new System.Drawing.Point(57, 55);
             this.studentName.Name = "studentName";
             this.studentName.ReadOnly = true;
-            this.studentName.Size = new System.Drawing.Size(218, 20);
+            this.studentName.Size = new System.Drawing.Size(218, 24);
             this.studentName.TabIndex = 1;
-            this.studentName.Modified = false;
-
             // 
             // addCredit
             // 
+            this.addCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCredit.Location = new System.Drawing.Point(443, 177);
             this.addCredit.Name = "addCredit";
-            this.addCredit.Size = new System.Drawing.Size(100, 20);
+            this.addCredit.Size = new System.Drawing.Size(100, 26);
             this.addCredit.TabIndex = 1;
             // 
             // copyToDo
             // 
+            this.copyToDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyToDo.Location = new System.Drawing.Point(443, 279);
             this.copyToDo.Name = "copyToDo";
-            this.copyToDo.Size = new System.Drawing.Size(100, 20);
+            this.copyToDo.Size = new System.Drawing.Size(100, 24);
             this.copyToDo.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(354, 39);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(353, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.Size = new System.Drawing.Size(111, 24);
             this.label6.TabIndex = 14;
             this.label6.Text = "ID Etudiant";
             // 
             // studentID
             // 
+            this.studentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentID.Location = new System.Drawing.Point(348, 55);
             this.studentID.Name = "studentID";
-            this.studentID.Size = new System.Drawing.Size(160, 20);
+            this.studentID.Size = new System.Drawing.Size(160, 24);
             this.studentID.TabIndex = 15;
             this.studentID.Text = "0";
-            this.studentID.Modified = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 263);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(257, 260);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.Size = new System.Drawing.Size(140, 16);
             this.label5.TabIndex = 16;
             this.label5.Text = "Copie(s) disponible(s)";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(462, 263);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(450, 260);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.Size = new System.Drawing.Size(84, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "Copie à faire";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(590, 39);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(602, 28);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.Size = new System.Drawing.Size(84, 24);
             this.label8.TabIndex = 18;
             this.label8.Text = "ID Carte";
             // 
             // studentIdCard
             // 
+            this.studentIdCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentIdCard.Location = new System.Drawing.Point(593, 55);
             this.studentIdCard.Name = "studentIdCard";
-            this.studentIdCard.Size = new System.Drawing.Size(160, 20);
+            this.studentIdCard.Size = new System.Drawing.Size(160, 24);
             this.studentIdCard.TabIndex = 19;
             this.studentIdCard.Text = "0";
-            this.studentIdCard.Modified = false;
             // 
             // copyAvailable
             // 
+            this.copyAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyAvailable.Location = new System.Drawing.Point(273, 279);
             this.copyAvailable.Name = "copyAvailable";
-            this.copyAvailable.Size = new System.Drawing.Size(100, 20);
+            this.copyAvailable.Size = new System.Drawing.Size(100, 26);
             this.copyAvailable.TabIndex = 20;
-            this.copyAvailable.Modified = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(280, 156);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(270, 153);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 13);
+            this.label9.Size = new System.Drawing.Size(110, 16);
             this.label9.TabIndex = 21;
             this.label9.Text = "Solde disponible";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(444, 156);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(440, 153);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 13);
+            this.label10.Size = new System.Drawing.Size(104, 16);
             this.label10.TabIndex = 22;
             this.label10.Text = "Ajouter du crédit";
             // 
             // soldeValue
             // 
+            this.soldeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soldeValue.Location = new System.Drawing.Point(273, 177);
+            this.soldeValue.MaximumSize = new System.Drawing.Size(100, 35);
+            this.soldeValue.MinimumSize = new System.Drawing.Size(100, 35);
             this.soldeValue.Name = "soldeValue";
-            this.soldeValue.Size = new System.Drawing.Size(100, 20);
+            this.soldeValue.Size = new System.Drawing.Size(100, 35);
             this.soldeValue.TabIndex = 23;
-            this.soldeValue.Text = usrManager.GetBalance(student);
-            this.soldeValue.Modified = false;
+            this.soldeValue.Text = "usrManager.GetBalance(student) ";
+            // 
+            // closeTransaction
+            // 
+            this.closeTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeTransaction.Location = new System.Drawing.Point(526, 367);
+            this.closeTransaction.Name = "closeTransaction";
+            this.closeTransaction.Size = new System.Drawing.Size(217, 34);
+            this.closeTransaction.TabIndex = 24;
+            this.closeTransaction.Text = "close transaction";
+            this.closeTransaction.UseVisualStyleBackColor = true;
+            this.closeTransaction.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.closeTransaction);
             this.Controls.Add(this.soldeValue);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -284,6 +306,7 @@ namespace WindowsFormsServicePaiement
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox soldeValue;
+        private System.Windows.Forms.Button closeTransaction;
     }
 }
 

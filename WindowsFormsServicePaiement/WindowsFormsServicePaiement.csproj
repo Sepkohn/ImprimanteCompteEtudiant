@@ -49,8 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calcul.cs" />
-    <Compile Include="Connected Services\ServiceReference_Payment\Reference.cs">
+    <Compile Include="Connected Services\ServiceReferenceWCFServPayment\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -67,7 +66,6 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="ICalcul.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -85,21 +83,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ServiceReference_Payment\Service1.wsdl" />
-    <None Include="Connected Services\ServiceReference_Payment\Service1.xsd">
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\Service1.wsdl" />
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference_Payment\Service11.xsd">
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference_Payment\Service12.xsd">
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference_Payment\Service13.xsd">
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\DataSources\DTO.User.datasource" />
-    <None Include="Properties\DataSources\WcfServicePayment.CompositeType.datasource" />
+    <None Include="DTO.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,6 +106,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="WcfServicePayment.CompositeType.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -131,19 +129,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference_Payment\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceWCFServPayment\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference_Payment\Service1.disco" />
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\Service1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference_Payment\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference_Payment\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference_Payment\Reference.svcmap">
+    <None Include="Connected Services\ServiceReferenceWCFServPayment\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -39,11 +39,31 @@ namespace WindowsFormsServicePaiement
         // Bouton de soustraction de copies >> Print
         private void buttonMoins_Click(object sender, EventArgs e)
         {
+            int soldeCopies = usrManager.UpdateCopy(student, int.Parse(copyToDo.Text), true);
+
             soldeValue.Modified = true;
-            copyAvailable.Text = usrManager.UpdateCopy(student, int.Parse(copyToDo.Text), true).ToString();
+
+            if (soldeCopies < 0)
+            {
+                copyToDo.Text = Math.Abs(soldeCopies).ToString();
+                copyAvailable.Text = "0";
+            }
+            else
+            {
+                copyAvailable.Text = soldeCopies.ToString();
+            }
+            
+
             soldeValue.Modified = false;
 
             Form1.ActiveForm.Activate();  // validate()
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.form2.Dispose();
+            Dispose();
+        }
+
     }
 }
