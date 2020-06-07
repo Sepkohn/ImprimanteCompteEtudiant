@@ -1,4 +1,8 @@
-﻿namespace WindowsFormsServicePaiement
+﻿using DTO;
+using BLL;
+
+
+namespace WindowsFormsServicePaiement
 {
 
     partial class Form1
@@ -21,6 +25,14 @@
             base.Dispose(disposing);
         }
 
+ /*       protected void findUser(string elementToIdentify)
+        {
+            User user = new User();
+
+
+
+        }
+*/
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -29,46 +41,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.etudiant = new System.Windows.Forms.Label();
             this.solde = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonPlus = new System.Windows.Forms.Button();
             this.buttonMoins = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBoxResult = new System.Windows.Forms.TextBox();
+            this.studentName = new System.Windows.Forms.TextBox();
+            this.addCredit = new System.Windows.Forms.TextBox();
+            this.copyToDo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.studentID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.studentIdCard = new System.Windows.Forms.TextBox();
+            this.copyAvailable = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.soldeValue = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // etudiant
             // 
             this.etudiant.AutoSize = true;
             this.etudiant.Location = new System.Drawing.Point(54, 39);
-            this.etudiant.Name = "label1";
+            this.etudiant.Name = "etudiant";
             this.etudiant.Size = new System.Drawing.Size(46, 13);
             this.etudiant.TabIndex = 0;
             this.etudiant.Text = "Etudiant";
-            this.etudiant.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // solde
             // 
             this.solde.AutoSize = true;
             this.solde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solde.Location = new System.Drawing.Point(38, 180);
-            this.solde.Name = "label2";
+            this.solde.Name = "solde";
             this.solde.Size = new System.Drawing.Size(108, 20);
             this.solde.TabIndex = 0;
             this.solde.Text = "Solde (CHF)";
-            this.solde.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -96,6 +108,7 @@
             this.buttonMoins.TabIndex = 2;
             this.buttonMoins.Text = "Print";
             this.buttonMoins.UseVisualStyleBackColor = true;
+            this.buttonMoins.Click += new System.EventHandler(this.buttonMoins_Click);
             // 
             // label4
             // 
@@ -107,26 +120,29 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Nombre de copie";
             // 
-            // textBox1
+            // studentName
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 1;
+            this.studentName.Location = new System.Drawing.Point(57, 55);
+            this.studentName.Name = "studentName";
+            this.studentName.ReadOnly = true;
+            this.studentName.Size = new System.Drawing.Size(218, 20);
+            this.studentName.TabIndex = 1;
+            this.studentName.Modified = false;
+
             // 
-            // textBox2
+            // addCredit
             // 
-            this.textBox2.Location = new System.Drawing.Point(443, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.addCredit.Location = new System.Drawing.Point(443, 177);
+            this.addCredit.Name = "addCredit";
+            this.addCredit.Size = new System.Drawing.Size(100, 20);
+            this.addCredit.TabIndex = 1;
             // 
-            // textBoxResult
+            // copyToDo
             // 
-            this.textBoxResult.Location = new System.Drawing.Point(443, 279);
-            this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(100, 20);
-            this.textBoxResult.TabIndex = 1;
+            this.copyToDo.Location = new System.Drawing.Point(443, 279);
+            this.copyToDo.Name = "copyToDo";
+            this.copyToDo.Size = new System.Drawing.Size(100, 20);
+            this.copyToDo.TabIndex = 1;
             // 
             // label6
             // 
@@ -137,12 +153,14 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "ID Etudiant";
             // 
-            // textBox3
+            // studentID
             // 
-            this.textBox3.Location = new System.Drawing.Point(348, 55);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 15;
+            this.studentID.Location = new System.Drawing.Point(348, 55);
+            this.studentID.Name = "studentID";
+            this.studentID.Size = new System.Drawing.Size(160, 20);
+            this.studentID.TabIndex = 15;
+            this.studentID.Text = "0";
+            this.studentID.Modified = false;
             // 
             // label5
             // 
@@ -152,7 +170,6 @@
             this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 16;
             this.label5.Text = "Copie(s) disponible(s)";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
@@ -162,7 +179,6 @@
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "Copie à faire";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -173,24 +189,27 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "ID Carte";
             // 
-            // textBox4
+            // studentIdCard
             // 
-            this.textBox4.Location = new System.Drawing.Point(593, 55);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 20);
-            this.textBox4.TabIndex = 19;
+            this.studentIdCard.Location = new System.Drawing.Point(593, 55);
+            this.studentIdCard.Name = "studentIdCard";
+            this.studentIdCard.Size = new System.Drawing.Size(160, 20);
+            this.studentIdCard.TabIndex = 19;
+            this.studentIdCard.Text = "0";
+            this.studentIdCard.Modified = false;
             // 
-            // textBox5
+            // copyAvailable
             // 
-            this.textBox5.Location = new System.Drawing.Point(273, 279);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 20;
+            this.copyAvailable.Location = new System.Drawing.Point(273, 279);
+            this.copyAvailable.Name = "copyAvailable";
+            this.copyAvailable.Size = new System.Drawing.Size(100, 20);
+            this.copyAvailable.TabIndex = 20;
+            this.copyAvailable.Modified = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(267, 156);
+            this.label9.Location = new System.Drawing.Point(280, 156);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 21;
@@ -205,23 +224,33 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Ajouter du crédit";
             // 
+            // soldeValue
+            // 
+            this.soldeValue.Location = new System.Drawing.Point(273, 177);
+            this.soldeValue.Name = "soldeValue";
+            this.soldeValue.Size = new System.Drawing.Size(100, 20);
+            this.soldeValue.TabIndex = 23;
+            this.soldeValue.Text = usrManager.GetBalance(student);
+            this.soldeValue.Modified = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.soldeValue);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.copyAvailable);
+            this.Controls.Add(this.studentIdCard);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.studentID);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxResult);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.copyToDo);
+            this.Controls.Add(this.addCredit);
+            this.Controls.Add(this.studentName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonMoins);
             this.Controls.Add(this.buttonPlus);
@@ -230,7 +259,6 @@
             this.Controls.Add(this.etudiant);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,18 +271,19 @@
         private System.Windows.Forms.Button buttonPlus;
         private System.Windows.Forms.Button buttonMoins;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBoxResult;
+        private System.Windows.Forms.TextBox studentName;
+        private System.Windows.Forms.TextBox addCredit;
+        private System.Windows.Forms.TextBox copyToDo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox studentID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox studentIdCard;
+        private System.Windows.Forms.TextBox copyAvailable;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox soldeValue;
     }
 }
 

@@ -7,49 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfServicePayment;
+using DTO;
 
 namespace WindowsFormsServicePaiement
 {
     public partial class Form1 : Form
     {
+        Service1 usrManager = new Service1();
+        User student = Program.form2.getStudent();
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Bouton d'ajout de copies
         private void buttonPlus_Click(object sender, EventArgs e)
         {
+            usrManager.AddCredit(student, int.Parse(addCredit.Text));
 
+            soldeValue.Modified = true;
+            soldeValue.Text = usrManager.GetBalance(student);
+            soldeValue.Modified = false;
+
+            soldeValue.Modified = true;
+            copyAvailable.Text = usrManager.UpdateCopy(student, 0, false).ToString();
+            soldeValue.Modified = false;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        // Bouton de soustraction de copies >> Print
+        private void buttonMoins_Click(object sender, EventArgs e)
         {
+            soldeValue.Modified = true;
+            copyAvailable.Text = usrManager.UpdateCopy(student, int.Parse(copyToDo.Text), true).ToString();
+            soldeValue.Modified = false;
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            Form1.ActiveForm.Activate();  // validate()
         }
     }
 }

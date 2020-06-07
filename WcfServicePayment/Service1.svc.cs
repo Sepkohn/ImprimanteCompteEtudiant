@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using DTO;
 using BLL;
+using System.ServiceModel.PeerResolvers;
 
 namespace WcfServicePayment
 {
@@ -68,6 +69,8 @@ namespace WcfServicePayment
 
             UserManager.UpdateBalance(user);
 
+  //          UpdateCopy(user, 0, false);
+
             return user.Balance;
         }
 
@@ -80,6 +83,26 @@ namespace WcfServicePayment
             UserManager.UpdateBalance(user);
 
             return user.Balance;
+        }
+
+        public int UpdateCopy(User user, int nbCopies, bool copyToDo)
+        {            
+            int copyAvailable = (int)((double)user.Balance / PRICE);
+            
+            if (copyToDo)
+            {
+                double cost = PRICE * nbCopies;
+
+                user.Balance -= (decimal)cost;
+
+                copyAvailable -= nbCopies;
+
+                UserManager.UpdateBalance(user);
+
+//                return user.Balance;
+            }
+
+            return copyAvailable;
         }
 
         public string GetBalance(User user)
