@@ -28,86 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            // les changements
+            this.nomEtudiant = new System.Windows.Forms.Label();
+            this.IdEtudiant = new System.Windows.Forms.Label();
+            this.idDeCarte = new System.Windows.Forms.Label();
+            this.textBoxPourIdCarte = new System.Windows.Forms.TextBox();
+            this.textBoxForName = new System.Windows.Forms.TextBox();
+            this.textBoxPourIdEtudiant = new System.Windows.Forms.TextBox();
+            this.echecDIdentification = new System.Windows.Forms.Label();
+            this.buttonValidate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // nomEtudiant
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(354, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.nomEtudiant.AutoSize = true;
+            this.nomEtudiant.Location = new System.Drawing.Point(336, 74);
+            this.nomEtudiant.Name = "nomEtudiant";
+            this.nomEtudiant.Size = new System.Drawing.Size(78, 13);
+            this.nomEtudiant.TabIndex = 0;
+            this.nomEtudiant.Text = "Nom d\'etudiant";
             // 
-            // label2
+            // IdEtudiant
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(354, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.IdEtudiant.AutoSize = true;
+            this.IdEtudiant.Location = new System.Drawing.Point(336, 180);
+            this.IdEtudiant.Name = "IdEtudiant";
+            this.IdEtudiant.Size = new System.Drawing.Size(58, 13);
+            this.IdEtudiant.TabIndex = 1;
+            this.IdEtudiant.Text = "Id Etudiant";
+            this.IdEtudiant.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // idDeCarte
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(354, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.idDeCarte.AutoSize = true;
+            this.idDeCarte.Location = new System.Drawing.Point(336, 280);
+            this.idDeCarte.Name = "idDeCarte";
+            this.idDeCarte.Size = new System.Drawing.Size(70, 13);
+            this.idDeCarte.TabIndex = 2;
+            this.idDeCarte.Text = "Id de la Carte";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(288, 333);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBoxPourIdCarte.Location = new System.Drawing.Point(288, 317);
+            this.textBoxPourIdCarte.Name = "textBox1";
+            this.textBoxPourIdCarte.Size = new System.Drawing.Size(174, 20);
+            this.textBoxPourIdCarte.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxForName
             // 
-            this.textBox2.Location = new System.Drawing.Point(288, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBoxForName.Location = new System.Drawing.Point(288, 100);
+            this.textBoxForName.Name = "textBoxForName";
+            this.textBoxForName.Size = new System.Drawing.Size(174, 20);
+            this.textBoxForName.TabIndex = 4;
+            this.textBoxForName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // textBoxPourIdEtudiant
             // 
-            this.textBox3.Location = new System.Drawing.Point(288, 214);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 20);
-            this.textBox3.TabIndex = 5;
+            this.textBoxPourIdEtudiant.Location = new System.Drawing.Point(288, 206);
+            this.textBoxPourIdEtudiant.Name = "textBoxPourIdEtudiant";
+            this.textBoxPourIdEtudiant.Size = new System.Drawing.Size(174, 20);
+            this.textBoxPourIdEtudiant.TabIndex = 5;
+            this.textBoxPourIdEtudiant.TextChanged += new System.EventHandler(this.textBoxPourIdEtudiant_TextChanged);
             // 
-            // label4
+            // echecDIdentification
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(536, 168);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(227, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Echec dentifiction ";
+            this.echecDIdentification.AutoSize = true;
+            this.echecDIdentification.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.echecDIdentification.ForeColor = System.Drawing.Color.Chocolate;
+            this.echecDIdentification.Location = new System.Drawing.Point(536, 168);
+            this.echecDIdentification.Name = "echecDIdentification";
+            this.echecDIdentification.Size = new System.Drawing.Size(254, 29);
+            this.echecDIdentification.TabIndex = 6;
+            this.echecDIdentification.Text = "Echec d\'identifiction ";
+            // 
+            // buttonValidate
+            // 
+            this.buttonValidate.Location = new System.Drawing.Point(339, 373);
+            this.buttonValidate.Name = "buttonValidate";
+            this.buttonValidate.Size = new System.Drawing.Size(75, 23);
+            this.buttonValidate.TabIndex = 7;
+            this.buttonValidate.Text = "Validate";
+            this.buttonValidate.UseVisualStyleBackColor = true;
+            this.buttonValidate.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonValidate);
+            this.Controls.Add(this.echecDIdentification);
+            this.Controls.Add(this.textBoxPourIdEtudiant);
+            this.Controls.Add(this.textBoxForName);
+            this.Controls.Add(this.textBoxPourIdCarte);
+            this.Controls.Add(this.idDeCarte);
+            this.Controls.Add(this.IdEtudiant);
+            this.Controls.Add(this.nomEtudiant);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -117,12 +133,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label nomEtudiant;
+        private System.Windows.Forms.Label IdEtudiant;
+        private System.Windows.Forms.Label idDeCarte;
+        private System.Windows.Forms.TextBox textBoxPourIdCarte;
+        private System.Windows.Forms.TextBox textBoxForName;
+        private System.Windows.Forms.TextBox textBoxPourIdEtudiant;
+        private System.Windows.Forms.Label echecDIdentification;
+        private System.Windows.Forms.Button buttonValidate;
     }
 }

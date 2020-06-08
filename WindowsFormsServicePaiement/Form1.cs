@@ -51,5 +51,20 @@ namespace WindowsFormsServicePaiement
         {
 
         }
+
+        private void ajouterCredit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxForStudentName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

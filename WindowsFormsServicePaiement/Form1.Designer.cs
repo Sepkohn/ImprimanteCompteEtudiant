@@ -21,6 +21,8 @@
             base.Dispose(disposing);
         }
 
+        // Les derniers changements
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -31,52 +33,53 @@
         {
             this.etudiant = new System.Windows.Forms.Label();
             this.solde = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.form1_window = new System.Windows.Forms.Label();
             this.buttonPlus = new System.Windows.Forms.Button();
-            this.buttonMoins = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBoxResult = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.nombredesCopies = new System.Windows.Forms.Label();
+            this.textBoxForStudentName = new System.Windows.Forms.TextBox();
+            this.textBoxForCredit = new System.Windows.Forms.TextBox();
+            this.textBoxToMakeCopies = new System.Windows.Forms.TextBox();
+            this.iDEtudiant = new System.Windows.Forms.Label();
+            this.textBoxForIdEtudiant = new System.Windows.Forms.TextBox();
+            this.copiesDisponibles = new System.Windows.Forms.Label();
+            this.copiesAFaire = new System.Windows.Forms.Label();
+            this.iDCarte = new System.Windows.Forms.Label();
+            this.textBoxForIdCarte = new System.Windows.Forms.TextBox();
+            this.textBoxForNbrCopies = new System.Windows.Forms.TextBox();
+            this.soldeDisponible = new System.Windows.Forms.Label();
+            this.ajouterCredit = new System.Windows.Forms.Label();
+            this.textBoxForSolde = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // etudiant
             // 
             this.etudiant.AutoSize = true;
             this.etudiant.Location = new System.Drawing.Point(54, 39);
-            this.etudiant.Name = "label1";
+            this.etudiant.Name = "etudiant";
             this.etudiant.Size = new System.Drawing.Size(46, 13);
             this.etudiant.TabIndex = 0;
             this.etudiant.Text = "Etudiant";
             this.etudiant.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // solde
             // 
             this.solde.AutoSize = true;
             this.solde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solde.Location = new System.Drawing.Point(38, 180);
-            this.solde.Name = "label2";
+            this.solde.Name = "solde";
             this.solde.Size = new System.Drawing.Size(108, 20);
             this.solde.TabIndex = 0;
             this.solde.Text = "Solde (CHF)";
             this.solde.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // form1_window
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(354, 299);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
-            this.label3.TabIndex = 0;
+            this.form1_window.AutoSize = true;
+            this.form1_window.Location = new System.Drawing.Point(354, 299);
+            this.form1_window.Name = "form1_window";
+            this.form1_window.Size = new System.Drawing.Size(0, 13);
+            this.form1_window.TabIndex = 0;
             // 
             // buttonPlus
             // 
@@ -88,144 +91,155 @@
             this.buttonPlus.UseVisualStyleBackColor = true;
             this.buttonPlus.Click += new System.EventHandler(this.buttonPlus_Click);
             // 
-            // buttonMoins
+            // buttonPrint
             // 
-            this.buttonMoins.Location = new System.Drawing.Point(574, 277);
-            this.buttonMoins.Name = "buttonMoins";
-            this.buttonMoins.Size = new System.Drawing.Size(75, 23);
-            this.buttonMoins.TabIndex = 2;
-            this.buttonMoins.Text = "Print";
-            this.buttonMoins.UseVisualStyleBackColor = true;
+            this.buttonPrint.Location = new System.Drawing.Point(574, 277);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(75, 23);
+            this.buttonPrint.TabIndex = 2;
+            this.buttonPrint.Text = "Print";
+            this.buttonPrint.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // nombredesCopies
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 276);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 24);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nombre de copie";
+            this.nombredesCopies.AutoSize = true;
+            this.nombredesCopies.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombredesCopies.Location = new System.Drawing.Point(38, 276);
+            this.nombredesCopies.Name = "nombredesCopies";
+            this.nombredesCopies.Size = new System.Drawing.Size(173, 24);
+            this.nombredesCopies.TabIndex = 0;
+            this.nombredesCopies.Text = "Nombre de copie";
             // 
-            // textBox1
+            // textBoxForStudentName
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxForStudentName.Location = new System.Drawing.Point(57, 55);
+            this.textBoxForStudentName.Name = "textBoxForStudentName";
+            this.textBoxForStudentName.Size = new System.Drawing.Size(218, 20);
+            this.textBoxForStudentName.TabIndex = 1;
+            this.textBoxForStudentName.TextChanged += new System.EventHandler(this.textBoxForStudentName_TextChanged);
             // 
-            // textBox2
+            // textBoxForCredit
             // 
-            this.textBox2.Location = new System.Drawing.Point(443, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBoxForCredit.Location = new System.Drawing.Point(443, 177);
+            this.textBoxForCredit.Name = "textBoxForCredit";
+            this.textBoxForCredit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxForCredit.TabIndex = 1;
             // 
-            // textBoxResult
+            // textBoxToMakeCopies
             // 
-            this.textBoxResult.Location = new System.Drawing.Point(443, 279);
-            this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(100, 20);
-            this.textBoxResult.TabIndex = 1;
+            this.textBoxToMakeCopies.Location = new System.Drawing.Point(443, 279);
+            this.textBoxToMakeCopies.Name = "textBoxToMakeCopies";
+            this.textBoxToMakeCopies.Size = new System.Drawing.Size(100, 20);
+            this.textBoxToMakeCopies.TabIndex = 1;
             // 
-            // label6
+            // iDEtudiant
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(354, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "ID Etudiant";
+            this.iDEtudiant.AutoSize = true;
+            this.iDEtudiant.Location = new System.Drawing.Point(354, 39);
+            this.iDEtudiant.Name = "iDEtudiant";
+            this.iDEtudiant.Size = new System.Drawing.Size(60, 13);
+            this.iDEtudiant.TabIndex = 14;
+            this.iDEtudiant.Text = "ID Etudiant";
             // 
-            // textBox3
+            // textBoxForIdEtudiant
             // 
-            this.textBox3.Location = new System.Drawing.Point(348, 55);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 15;
+            this.textBoxForIdEtudiant.Location = new System.Drawing.Point(348, 55);
+            this.textBoxForIdEtudiant.Name = "textBoxForIdEtudiant";
+            this.textBoxForIdEtudiant.Size = new System.Drawing.Size(160, 20);
+            this.textBoxForIdEtudiant.TabIndex = 15;
             // 
-            // label5
+            // copiesDisponibles
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 263);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Copie(s) disponible(s)";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.copiesDisponibles.AutoSize = true;
+            this.copiesDisponibles.Location = new System.Drawing.Point(270, 263);
+            this.copiesDisponibles.Name = "copiesDisponibles";
+            this.copiesDisponibles.Size = new System.Drawing.Size(106, 13);
+            this.copiesDisponibles.TabIndex = 16;
+            this.copiesDisponibles.Text = "Copie(s) disponible(s)";
+            this.copiesDisponibles.Click += new System.EventHandler(this.label5_Click);
             // 
-            // label7
+            // copiesAFaire
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(462, 263);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Copie à faire";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.copiesAFaire.AutoSize = true;
+            this.copiesAFaire.Location = new System.Drawing.Point(462, 263);
+            this.copiesAFaire.Name = "copiesAFaire";
+            this.copiesAFaire.Size = new System.Drawing.Size(66, 13);
+            this.copiesAFaire.TabIndex = 17;
+            this.copiesAFaire.Text = "Copie à faire";
+            this.copiesAFaire.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label8
+            // iDCarte
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(590, 39);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "ID Carte";
+            this.iDCarte.AutoSize = true;
+            this.iDCarte.Location = new System.Drawing.Point(590, 39);
+            this.iDCarte.Name = "iDCarte";
+            this.iDCarte.Size = new System.Drawing.Size(46, 13);
+            this.iDCarte.TabIndex = 18;
+            this.iDCarte.Text = "ID Carte";
             // 
-            // textBox4
+            // textBoxForIdCarte
             // 
-            this.textBox4.Location = new System.Drawing.Point(593, 55);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 20);
-            this.textBox4.TabIndex = 19;
+            this.textBoxForIdCarte.Location = new System.Drawing.Point(593, 55);
+            this.textBoxForIdCarte.Name = "textBoxForIdCarte";
+            this.textBoxForIdCarte.Size = new System.Drawing.Size(160, 20);
+            this.textBoxForIdCarte.TabIndex = 19;
             // 
-            // textBox5
+            // textBoxForNbrCopies
             // 
-            this.textBox5.Location = new System.Drawing.Point(273, 279);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 20;
+            this.textBoxForNbrCopies.Location = new System.Drawing.Point(273, 279);
+            this.textBoxForNbrCopies.Name = "textBoxForNbrCopies";
+            this.textBoxForNbrCopies.Size = new System.Drawing.Size(100, 20);
+            this.textBoxForNbrCopies.TabIndex = 20;
             // 
-            // label9
+            // soldeDisponible
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(267, 156);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 13);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Solde disponible";
+            this.soldeDisponible.AutoSize = true;
+            this.soldeDisponible.Location = new System.Drawing.Point(267, 156);
+            this.soldeDisponible.Name = "soldeDisponible";
+            this.soldeDisponible.Size = new System.Drawing.Size(84, 13);
+            this.soldeDisponible.TabIndex = 21;
+            this.soldeDisponible.Text = "Solde disponible";
             // 
-            // label10
+            // ajouterCredit
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(444, 156);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Ajouter du crédit";
+            this.ajouterCredit.AutoSize = true;
+            this.ajouterCredit.Location = new System.Drawing.Point(444, 156);
+            this.ajouterCredit.Name = "ajouterCredit";
+            this.ajouterCredit.Size = new System.Drawing.Size(84, 13);
+            this.ajouterCredit.TabIndex = 22;
+            this.ajouterCredit.Text = "Ajouter du crédit";
+            this.ajouterCredit.Click += new System.EventHandler(this.ajouterCredit_Click);
+            // 
+            // textBoxForSolde
+            // 
+            this.textBoxForSolde.Location = new System.Drawing.Point(270, 182);
+            this.textBoxForSolde.Name = "textBoxForSolde";
+            this.textBoxForSolde.Size = new System.Drawing.Size(100, 20);
+            this.textBoxForSolde.TabIndex = 23;
+            this.textBoxForSolde.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxResult);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.buttonMoins);
+            this.Controls.Add(this.textBoxForSolde);
+            this.Controls.Add(this.ajouterCredit);
+            this.Controls.Add(this.soldeDisponible);
+            this.Controls.Add(this.textBoxForNbrCopies);
+            this.Controls.Add(this.textBoxForIdCarte);
+            this.Controls.Add(this.iDCarte);
+            this.Controls.Add(this.copiesAFaire);
+            this.Controls.Add(this.copiesDisponibles);
+            this.Controls.Add(this.textBoxForIdEtudiant);
+            this.Controls.Add(this.iDEtudiant);
+            this.Controls.Add(this.textBoxToMakeCopies);
+            this.Controls.Add(this.textBoxForCredit);
+            this.Controls.Add(this.textBoxForStudentName);
+            this.Controls.Add(this.nombredesCopies);
+            this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.buttonPlus);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.form1_window);
             this.Controls.Add(this.solde);
             this.Controls.Add(this.etudiant);
             this.Name = "Form1";
@@ -239,22 +253,23 @@
         #endregion
         private System.Windows.Forms.Label etudiant;
         private System.Windows.Forms.Label solde;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label form1_window;
         private System.Windows.Forms.Button buttonPlus;
-        private System.Windows.Forms.Button buttonMoins;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBoxResult;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.Label nombredesCopies;
+        private System.Windows.Forms.TextBox textBoxForStudentName;
+        private System.Windows.Forms.TextBox textBoxForCredit;
+        private System.Windows.Forms.TextBox textBoxToMakeCopies;
+        private System.Windows.Forms.Label iDEtudiant;
+        private System.Windows.Forms.TextBox textBoxForIdEtudiant;
+        private System.Windows.Forms.Label copiesDisponibles;
+        private System.Windows.Forms.Label copiesAFaire;
+        private System.Windows.Forms.Label iDCarte;
+        private System.Windows.Forms.TextBox textBoxForIdCarte;
+        private System.Windows.Forms.TextBox textBoxForNbrCopies;
+        private System.Windows.Forms.Label soldeDisponible;
+        private System.Windows.Forms.Label ajouterCredit;
+        private System.Windows.Forms.TextBox textBoxForSolde;
     }
 }
 
