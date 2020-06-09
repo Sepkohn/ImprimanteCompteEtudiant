@@ -9,38 +9,43 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WcfServicePayment;
 using DTO;
-
+using System.ServiceModel;
+using WindowsFormsServicePaiement.ServiceReferenceWCFServPayment;
 
 namespace WindowsFormsServicePaiement
 {
     public partial class Form2 : Form
     {
+        private ServiceReferenceWCFServPayment.Service1Client client;
+     
 
-        Service1 usrManager = new Service1();
+     //   Service1 usrManager = new Service1();
         User student = new User();
 
+      //  public Service1Client Client { get => client; set => client = value; }
 
         public Form2()
         {
             InitializeComponent();
+            client = new ServiceReferenceWCFServPayment.Service1Client();
         }
 
         private void checkStudentCLICK(object sender, EventArgs e)
         {
             if (textBox1.Text != null || textBox1.Text.Length < 5)
             {
-                student = usrManager.GetUserByUsername(textBox1.Text);
+                student = client.GetUserByUsername(textBox1.Text);
             }
 
             if (textBox2.Text != null || textBox1.Text.Length < 5)
             {
-                student = usrManager.GetUserById(int.Parse(textBox1.Text));
+                student = client.GetUserById(int.Parse(textBox1.Text));
 
             }
 
             if (textBox3.Text != null || textBox1.Text.Length < 5)
             {
-                student = usrManager.GetUserByCardId(int.Parse(textBox1.Text));
+                student = client.GetUserByCardId(int.Parse(textBox1.Text));
 
             }
 
@@ -162,5 +167,10 @@ namespace WindowsFormsServicePaiement
             }
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+          
+
+        }
     }
 }

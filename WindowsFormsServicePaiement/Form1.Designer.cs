@@ -137,6 +137,7 @@ namespace WindowsFormsServicePaiement
             this.addCredit.Name = "addCredit";
             this.addCredit.Size = new System.Drawing.Size(100, 26);
             this.addCredit.TabIndex = 1;
+            this.addCredit.TextChanged += new System.EventHandler(this.addCredit_TextChanged);
             // 
             // copyToDo
             // 
@@ -145,6 +146,7 @@ namespace WindowsFormsServicePaiement
             this.copyToDo.Name = "copyToDo";
             this.copyToDo.Size = new System.Drawing.Size(100, 24);
             this.copyToDo.TabIndex = 1;
+            this.copyToDo.TextChanged += new System.EventHandler(this.copyToDo_TextChanged);
             // 
             // label6
             // 
@@ -211,6 +213,7 @@ namespace WindowsFormsServicePaiement
             this.copyAvailable.Name = "copyAvailable";
             this.copyAvailable.Size = new System.Drawing.Size(100, 26);
             this.copyAvailable.TabIndex = 20;
+            this.copyAvailable.TextChanged += new System.EventHandler(this.copyAvailable_TextChanged);
             // 
             // label9
             // 
@@ -239,9 +242,10 @@ namespace WindowsFormsServicePaiement
             this.soldeValue.MaximumSize = new System.Drawing.Size(100, 35);
             this.soldeValue.MinimumSize = new System.Drawing.Size(100, 35);
             this.soldeValue.Name = "soldeValue";
-            this.soldeValue.Size = new System.Drawing.Size(100, 35);
+            this.soldeValue.Size = new System.Drawing.Size(100, 24);
             this.soldeValue.TabIndex = 23;
             this.soldeValue.Text = "usrManager.GetBalance(student) ";
+            this.soldeValue.TextChanged += new System.EventHandler(this.soldeValue_TextChanged);
             // 
             // closeTransaction
             // 

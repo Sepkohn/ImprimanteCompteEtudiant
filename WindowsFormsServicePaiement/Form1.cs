@@ -14,32 +14,34 @@ namespace WindowsFormsServicePaiement
 {
     public partial class Form1 : Form
     {
-        Service1 usrManager = new Service1();
+        private ServiceReferenceWCFServPayment.Service1Client client;
+     //   Service1 usrManager = new Service1();
         User student = Program.form2.getStudent();
 
         public Form1()
         {
             InitializeComponent();
+            client = new ServiceReferenceWCFServPayment.Service1Client();
         }
 
         // Bouton d'ajout de copies
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            usrManager.AddCredit(student, int.Parse(addCredit.Text));
+            client.AddCredit(student, int.Parse(addCredit.Text));
 
             soldeValue.Modified = true;
-            soldeValue.Text = usrManager.GetBalance(student);
+            soldeValue.Text = client.GetBalance(student);
             soldeValue.Modified = false;
 
             soldeValue.Modified = true;
-            copyAvailable.Text = usrManager.UpdateCopy(student, 0, false).ToString();
+       //     copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
             soldeValue.Modified = false;
         }
 
         // Bouton de soustraction de copies >> Print
         private void buttonMoins_Click(object sender, EventArgs e)
         {
-            int soldeCopies = usrManager.UpdateCopy(student, int.Parse(copyToDo.Text), true);
+         /*   int soldeCopies = client.UpdateCopy(student, int.Parse(copyToDo.Text), true);
 
             soldeValue.Modified = true;
 
@@ -57,6 +59,12 @@ namespace WindowsFormsServicePaiement
             soldeValue.Modified = false;
 
             Form1.ActiveForm.Activate();  // validate()
+
+            
+            int nbrCopiesToDo = int.Parse(copyToDo.Text);
+            decimal balance = client.Print(student, nbrCopiesToDo); // balance??
+*/
+             
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,5 +73,25 @@ namespace WindowsFormsServicePaiement
             Dispose();
         }
 
+        private void soldeValue_TextChanged(object sender, EventArgs e)
+        {
+            string solde = client.GetBalance(student);
+            solde.ToString();
+        }
+
+        private void addCredit_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void copyAvailable_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void copyToDo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -40,6 +40,9 @@ namespace WcfServicePayment
         [OperationContract]
         decimal Print(User user, int nbCopies);
 
+        [OperationContract]
+        int UpdateCopy(User user, int nbCopies, bool copyToDo);
+
     }
 
 

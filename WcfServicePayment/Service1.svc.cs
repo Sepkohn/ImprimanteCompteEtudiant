@@ -105,6 +105,7 @@ namespace WcfServicePayment
             return copyAvailable;
         }
 
+     
         public string GetBalance(User user)
         {
             return UserManager.GetBalance(user);
