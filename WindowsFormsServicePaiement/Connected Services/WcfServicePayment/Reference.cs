@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsServicePaiement.ServiceReferenceWCFServPayment {
+namespace WindowsFormsServicePaiement.WcfServicePayment {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceWCFServPayment.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WcfServicePayment.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
@@ -21,12 +21,7 @@ namespace WindowsFormsServicePaiement.ServiceReferenceWCFServPayment {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        WcfServicePayment.CompositeType GetDataUsingDataContract(WcfServicePayment.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<WcfServicePayment.CompositeType> GetDataUsingDataContractAsync(WcfServicePayment.CompositeType composite);
-        
+       
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
         DTO.User GetUserById(int uid);
         
@@ -62,21 +57,15 @@ namespace WindowsFormsServicePaiement.ServiceReferenceWCFServPayment {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Print", ReplyAction="http://tempuri.org/IService1/PrintResponse")]
         System.Threading.Tasks.Task<decimal> PrintAsync(DTO.User user, int nbCopies);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCopy", ReplyAction="http://tempuri.org/IService1/UpdateCopyResponse")]
-        int UpdateCopy(DTO.User user, int nbCopies, bool copyToDo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCopy", ReplyAction="http://tempuri.org/IService1/UpdateCopyResponse")]
-        System.Threading.Tasks.Task<int> UpdateCopyAsync(DTO.User user, int nbCopies, bool copyToDo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : WindowsFormsServicePaiement.ServiceReferenceWCFServPayment.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : WindowsFormsServicePaiement.WcfServicePayment.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<WindowsFormsServicePaiement.ServiceReferenceWCFServPayment.IService1>, WindowsFormsServicePaiement.ServiceReferenceWCFServPayment.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<WindowsFormsServicePaiement.WcfServicePayment.IService1>, WindowsFormsServicePaiement.WcfServicePayment.IService1 {
         
         public Service1Client() {
         }
@@ -105,13 +94,7 @@ namespace WindowsFormsServicePaiement.ServiceReferenceWCFServPayment {
             return base.Channel.GetDataAsync(value);
         }
         
-        public WcfServicePayment.CompositeType GetDataUsingDataContract(WcfServicePayment.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
-        }
-        
-        public System.Threading.Tasks.Task<WcfServicePayment.CompositeType> GetDataUsingDataContractAsync(WcfServicePayment.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
-        }
+ 
         
         public DTO.User GetUserById(int uid) {
             return base.Channel.GetUserById(uid);
@@ -159,14 +142,6 @@ namespace WindowsFormsServicePaiement.ServiceReferenceWCFServPayment {
         
         public System.Threading.Tasks.Task<decimal> PrintAsync(DTO.User user, int nbCopies) {
             return base.Channel.PrintAsync(user, nbCopies);
-        }
-        
-        public int UpdateCopy(DTO.User user, int nbCopies, bool copyToDo) {
-            return base.Channel.UpdateCopy(user, nbCopies, copyToDo);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateCopyAsync(DTO.User user, int nbCopies, bool copyToDo) {
-            return base.Channel.UpdateCopyAsync(user, nbCopies, copyToDo);
         }
     }
 }

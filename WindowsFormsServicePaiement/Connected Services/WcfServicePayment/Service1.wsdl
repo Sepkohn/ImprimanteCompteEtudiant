@@ -56,12 +56,6 @@
   <wsdl:message name="IService1_Print_OutputMessage">
     <wsdl:part name="parameters" element="tns:PrintResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_UpdateCopy_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateCopy" />
-  </wsdl:message>
-  <wsdl:message name="IService1_UpdateCopy_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateCopyResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -94,10 +88,6 @@
     <wsdl:operation name="Print">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Print" message="tns:IService1_Print_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PrintResponse" message="tns:IService1_Print_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateCopy">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCopy" message="tns:IService1_UpdateCopy_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCopyResponse" message="tns:IService1_UpdateCopy_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -167,15 +157,6 @@
     </wsdl:operation>
     <wsdl:operation name="Print">
       <soap:operation soapAction="http://tempuri.org/IService1/Print" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateCopy">
-      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCopy" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

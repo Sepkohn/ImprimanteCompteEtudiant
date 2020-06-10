@@ -17,12 +17,14 @@ namespace WindowsFormsServicePaiement
     public partial class Form2 : Form
     {
         private ServiceReferenceWCFServPayment.Service1Client client;
-     
+        private bool texBox1Bool = false;
+        private bool texBox2Bool = false;
+        private bool texBox3Bool = false;
 
-     //   Service1 usrManager = new Service1();
+        //   Service1 usrManager = new Service1();
         User student = new User();
 
-      //  public Service1Client Client { get => client; set => client = value; }
+        //  public Service1Client Client { get => client; set => client = value; }
 
         public Form2()
         {
@@ -32,115 +34,42 @@ namespace WindowsFormsServicePaiement
 
         private void checkStudentCLICK(object sender, EventArgs e)
         {
-            if (textBox1.Text != null || textBox1.Text.Length < 5)
+
+            if (getStudent() == null)
             {
-                student = client.GetUserByUsername(textBox1.Text);
+//                reset(this);
             }
-
-            if (textBox2.Text != null || textBox1.Text.Length < 5)
+            else
             {
-                student = client.GetUserById(int.Parse(textBox1.Text));
-
+                Form1 form1 = new Form1(this.student);
+                form1.Show();
             }
-
-            if (textBox3.Text != null || textBox1.Text.Length < 5)
-            {
-                student = client.GetUserByCardId(int.Parse(textBox1.Text));
-
-            }
-
-            if (student == null)
-            {
-
-                while (student == null)
-                {
-
-                    this.label4.AutoSize = true;
-                    this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    this.label4.ForeColor = System.Drawing.Color.Chocolate;
-                    this.label4.Location = new System.Drawing.Point(536, 168);
-                    this.label4.Name = "label4";
-                    this.label4.Size = new System.Drawing.Size(227, 29);
-                    this.label4.TabIndex = 6;
-                    this.label4.Text = "Identifiction failed";
-
-                    textBox1.Text = null;
-                    textBox2.Text = null;
-                    textBox3.Text = null;
-
-                    //                  Program.Application.Run(form2);
-
-                }
-
-            }
-
-        }
-
-        private void selectedTexBox()
-        {
-
-
-
         }
 
         public User getStudent()
         {
- /*           Service1 usrManager = new Service1();
-            User student = new User();
-
-            if (textBox1.Text != null || textBox1.Text.Length < 5)
+            if (texBox1Bool) // textBox1.Text != null || textBox1.Text.Length < 0)
             {
-                student = usrManager.GetUserByUsername(textBox1.Text);
-
+                student = client.GetUserByUsername(textBox1.Text);
             }
 
-            if (textBox2.Text != null || textBox1.Text.Length < 5)
+            else if (this.texBox2Bool) // textBox1.Text != null || textBox1.TextLength < 0)
             {
-                student = usrManager.GetUserById(int.Parse(textBox1.Text));
-
+                this.student = client.GetUserById(int.Parse(textBox2.Text));
             }
 
-            if (textBox3.Text != null || textBox1.Text.Length < 5)
+            else if (texBox3Bool) // textBox1.Text != null || textBox1.TextLength < 0)
             {
-                student = usrManager.GetUserByCardId(int.Parse(textBox1.Text));
-
+                this.student = client.GetUserByCardId(int.Parse(textBox3.Text));
             }
 
-            if (student == null)
-            {
-                while (student == null)
-                {
-
-                    this.label4.AutoSize = true;
-                    this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    this.label4.ForeColor = System.Drawing.Color.Chocolate;
-                    this.label4.Location = new System.Drawing.Point(536, 168);
-                    this.label4.Name = "label4";
-                    this.label4.Size = new System.Drawing.Size(227, 29);
-                    this.label4.TabIndex = 6;
-                    this.label4.Text = "Identifiction failed";
-
-                    textBox1.Text = null;
-                    textBox2.Text = null;
-                    textBox3.Text = null;
-
-  //                  Program.Application.Run(form2);
-
-                }
-            }
-            else
-            {
-                Application.Run(mainForm: new Form1());
-
-            }
-*/
             return student;
         }
 
         // TextBox Student Name
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if(textBox2.Text.Length > 0)
+            if (textBox2.Text.Length > 0)
             {
                 textBox3.Enabled = false;
                 textBox1.Enabled = false;
@@ -167,10 +96,27 @@ namespace WindowsFormsServicePaiement
             }
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        public void reset(Control form)
         {
-          
+            Form2 NewForm = new Form2();
+            NewForm.Show();
+            NewForm.LabelErreur();
+            Dispose(false);
+        }
+
+        private void LabelErreur()
+        {
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.ForeColor = System.Drawing.Color.Chocolate;
+            label4.Location = new System.Drawing.Point(536, 168);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(227, 29);
+            label4.TabIndex = 6;
+            label4.Text = "Identifiction failed";
 
         }
+
+
     }
 }

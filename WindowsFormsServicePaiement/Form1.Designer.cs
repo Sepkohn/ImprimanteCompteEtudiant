@@ -11,6 +11,12 @@ namespace WindowsFormsServicePaiement
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private User student = null;
+
+        public Form1 (User student)
+        {
+            this.student = student;
+        }
 
         /// <summary>
         /// Clean up any resources being used.
@@ -129,6 +135,7 @@ namespace WindowsFormsServicePaiement
             this.studentName.ReadOnly = true;
             this.studentName.Size = new System.Drawing.Size(218, 24);
             this.studentName.TabIndex = 1;
+            this.studentName.Text = student.Username;
             // 
             // addCredit
             // 
@@ -165,7 +172,7 @@ namespace WindowsFormsServicePaiement
             this.studentID.Name = "studentID";
             this.studentID.Size = new System.Drawing.Size(160, 24);
             this.studentID.TabIndex = 15;
-            this.studentID.Text = "0";
+            this.studentID.Text = student.Uid.ToString();
             // 
             // label5
             // 
@@ -204,7 +211,7 @@ namespace WindowsFormsServicePaiement
             this.studentIdCard.Name = "studentIdCard";
             this.studentIdCard.Size = new System.Drawing.Size(160, 24);
             this.studentIdCard.TabIndex = 19;
-            this.studentIdCard.Text = "0";
+            this.studentIdCard.Text = student.CardId.ToString();
             // 
             // copyAvailable
             // 
@@ -244,7 +251,7 @@ namespace WindowsFormsServicePaiement
             this.soldeValue.Name = "soldeValue";
             this.soldeValue.Size = new System.Drawing.Size(100, 24);
             this.soldeValue.TabIndex = 23;
-            this.soldeValue.Text = "usrManager.GetBalance(student) ";
+            this.soldeValue.Text = " student.GetBalance().ToString() ";
             this.soldeValue.TextChanged += new System.EventHandler(this.soldeValue_TextChanged);
             // 
             // closeTransaction

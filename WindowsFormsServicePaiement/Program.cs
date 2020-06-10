@@ -19,7 +19,13 @@ namespace WindowsFormsServicePaiement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(mainForm: form2 = new Form2());
+
+            while (form2.getStudent() == null)
+            {
+                Application.Run(mainForm: form2);
+            } 
 
         }
     }

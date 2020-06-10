@@ -16,7 +16,7 @@ namespace WindowsFormsServicePaiement
     {
         private ServiceReferenceWCFServPayment.Service1Client client;
      //   Service1 usrManager = new Service1();
-        User student = Program.form2.getStudent();
+     //   User student = Program.form2.getStudent();
 
         public Form1()
         {
@@ -41,7 +41,7 @@ namespace WindowsFormsServicePaiement
         // Bouton de soustraction de copies >> Print
         private void buttonMoins_Click(object sender, EventArgs e)
         {
-         /*   int soldeCopies = client.UpdateCopy(student, int.Parse(copyToDo.Text), true);
+            int soldeCopies = client.UpdateCopy(student, int.Parse(copyToDo.Text), true);
 
             soldeValue.Modified = true;
 
@@ -63,7 +63,7 @@ namespace WindowsFormsServicePaiement
             
             int nbrCopiesToDo = int.Parse(copyToDo.Text);
             decimal balance = client.Print(student, nbrCopiesToDo); // balance??
-*/
+
              
         }
 
