@@ -14,7 +14,7 @@ namespace ClientConsole
         {
             using (PaymentService.Service1Client myService = new PaymentService.Service1Client())
             {
-                Console.WriteLine("Starting the programm");
+                Console.WriteLine("lancement du programme");
 
                  User student = myService.GetUserById(256);
 
