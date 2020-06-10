@@ -16,18 +16,25 @@ namespace ClientConsole
             {
                 Console.WriteLine("Starting the programm");
 
-                 User student = myService.GetUserByCardId(256);
-         
+                 User student = myService.GetUserById(256);
 
-                Console.WriteLine($"Here is Student  : {student}");
+                if (student != null)
+                {
 
-                student.Balance = myService.AddCredit(student, 20);
+                    Console.WriteLine($"Voici mon client : {student}");
 
-                Console.WriteLine(myService.GetBalance(student));
+                    student.Balance = myService.AddCredit(student, 20);
 
-                student.Balance = myService.Print(student, 20);
+                    Console.WriteLine(myService.GetBalance(student));
 
-                Console.WriteLine(myService.GetBalance(student));
+                    student.Balance = myService.Print(student, 20);
+
+                    Console.WriteLine(myService.GetBalance(student));
+                }
+
+                else {
+                    Console.WriteLine("Aucun client n'a été trouvé... Veuillez recommencer");                
+                }
 
             }
 
