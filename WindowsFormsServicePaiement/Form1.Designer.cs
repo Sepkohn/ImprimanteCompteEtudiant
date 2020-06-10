@@ -11,11 +11,9 @@ namespace WindowsFormsServicePaiement
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private User student = null;
 
-        public Form1 (User student)
+        public Form1 ()
         {
-            this.student = student;
         }
 
         /// <summary>

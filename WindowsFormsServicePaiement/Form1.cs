@@ -16,10 +16,11 @@ namespace WindowsFormsServicePaiement
     {
         private ServiceReferenceWCFServPayment.Service1Client client;
      //   Service1 usrManager = new Service1();
-     //   User student = Program.form2.getStudent();
+        private User student= null;
 
-        public Form1()
+        public Form1(User student)
         {
+            this.student = student;
             InitializeComponent();
             client = new ServiceReferenceWCFServPayment.Service1Client();
         }

@@ -34,8 +34,7 @@ namespace WindowsFormsServicePaiement
 
         private void checkStudentCLICK(object sender, EventArgs e)
         {
-
-            if (getStudent() == null)
+            if (student == null)
             {
 //                reset(this);
             }
