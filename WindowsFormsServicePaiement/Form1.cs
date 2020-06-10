@@ -15,8 +15,7 @@ namespace WindowsFormsServicePaiement
     public partial class Form1 : Form
     {
         private ServiceReferenceWCFServPayment.Service1Client client;
-     //   Service1 usrManager = new Service1();
-        private User student= null;
+        protected User student= null;
 
         public Form1(User student)
         {

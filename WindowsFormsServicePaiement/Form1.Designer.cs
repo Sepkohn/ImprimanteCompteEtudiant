@@ -249,7 +249,7 @@ namespace WindowsFormsServicePaiement
             this.soldeValue.Name = "soldeValue";
             this.soldeValue.Size = new System.Drawing.Size(100, 24);
             this.soldeValue.TabIndex = 23;
-            this.soldeValue.Text = " student.GetBalance().ToString() ";
+            this.soldeValue.Text = student.Balance.ToString();
             this.soldeValue.TextChanged += new System.EventHandler(this.soldeValue_TextChanged);
             // 
             // closeTransaction

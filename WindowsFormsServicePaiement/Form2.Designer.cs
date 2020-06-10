@@ -72,7 +72,7 @@ namespace WindowsFormsServicePaiement
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(288, 333);
+            this.textBox1.Location = new System.Drawing.Point(288, 101);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(174, 20);
             this.textBox1.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace WindowsFormsServicePaiement
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(288, 100);
+            this.textBox2.Location = new System.Drawing.Point(288, 212);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(174, 20);
             this.textBox2.TabIndex = 4;
@@ -88,7 +88,7 @@ namespace WindowsFormsServicePaiement
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(288, 214);
+            this.textBox3.Location = new System.Drawing.Point(288, 335);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(174, 20);
             this.textBox3.TabIndex = 5;
@@ -135,7 +135,6 @@ namespace WindowsFormsServicePaiement
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Form2";
- //           this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

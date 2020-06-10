@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WcfServicePayment;
 using DTO;
 using System.ServiceModel;
 using WindowsFormsServicePaiement.ServiceReferenceWCFServPayment;
@@ -16,27 +15,27 @@ namespace WindowsFormsServicePaiement
 {
     public partial class Form2 : Form
     {
-        private ServiceReferenceWCFServPayment.Service1Client client;
+        private Service1Client client;
         private bool texBox1Bool = false;
         private bool texBox2Bool = false;
         private bool texBox3Bool = false;
 
         //   Service1 usrManager = new Service1();
-        User student = new User();
+        User student = null;
 
         //  public Service1Client Client { get => client; set => client = value; }
 
         public Form2()
         {
             InitializeComponent();
-            client = new ServiceReferenceWCFServPayment.Service1Client();
+            client = new Service1Client();
         }
 
         private void checkStudentCLICK(object sender, EventArgs e)
         {
-            if (student == null)
+            if (getStudent() == null)
             {
-//                reset(this);
+                reset(this);
             }
             else
             {
@@ -72,6 +71,7 @@ namespace WindowsFormsServicePaiement
             {
                 textBox3.Enabled = false;
                 textBox1.Enabled = false;
+                texBox2Bool = true;
             }
         }
 
@@ -82,6 +82,7 @@ namespace WindowsFormsServicePaiement
             {
                 textBox2.Enabled = false;
                 textBox1.Enabled = false;
+                texBox3Bool = true;
             }
         }
 
@@ -92,6 +93,7 @@ namespace WindowsFormsServicePaiement
             {
                 textBox3.Enabled = false;
                 textBox2.Enabled = false;
+                texBox1Bool = true;
             }
         }
 
