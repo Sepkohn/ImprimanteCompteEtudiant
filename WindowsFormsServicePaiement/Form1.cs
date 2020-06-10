@@ -7,47 +7,89 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfServicePayment;
+using DTO;
 
 namespace WindowsFormsServicePaiement
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private ServiceReferenceWCFServPayment.Service1Client client;
+        protected User student= null;
+
+        public Form1(User student)
         {
+            this.student = student;
             InitializeComponent();
+            client = new ServiceReferenceWCFServPayment.Service1Client();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Bouton d'ajout de copies
         private void buttonPlus_Click(object sender, EventArgs e)
         {
+            client.AddCredit(student, int.Parse(addCredit.Text));
 
+            soldeValue.Modified = true;
+            soldeValue.Text = client.GetBalance(student);
+            soldeValue.Modified = false;
+
+            soldeValue.Modified = true;
+       //     copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
+            soldeValue.Modified = false;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        // Bouton de soustraction de copies >> Print
+        private void buttonMoins_Click(object sender, EventArgs e)
         {
+            int soldeCopies = client.UpdateCopy(student, int.Parse(copyToDo.Text), true);
 
+            soldeValue.Modified = true;
+
+            if (soldeCopies < 0)
+            {
+                copyToDo.Text = Math.Abs(soldeCopies).ToString();
+                copyAvailable.Text = "0";
+            }
+            else
+            {
+                copyAvailable.Text = soldeCopies.ToString();
+            }
+            
+
+            soldeValue.Modified = false;
+
+            Form1.ActiveForm.Activate();  // validate()
+
+            
+            int nbrCopiesToDo = int.Parse(copyToDo.Text);
+            decimal balance = client.Print(student, nbrCopiesToDo); // balance??
+
+             
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Program.form2.Dispose();
+            Dispose();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void soldeValue_TextChanged(object sender, EventArgs e)
         {
-
+            string solde = client.GetBalance(student);
+            solde.ToString();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void addCredit_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void copyAvailable_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void copyToDo_TextChanged(object sender, EventArgs e)
         {
 
         }
