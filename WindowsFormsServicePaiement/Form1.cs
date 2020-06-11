@@ -20,17 +20,18 @@ namespace WindowsFormsServicePaiement
         public Form1(User student)
         {
             this.student = student;
-            InitializeComponent();
             client = new ServiceReferenceWCFServPayment.Service1Client();
+            InitializeComponent();
+
         }
 
         // Bouton d'ajout de copies
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            client.AddCredit(student, int.Parse(addCredit.Text));
+            Decimal balance = client.AddCredit(student, int.Parse(addCredit.Text));
 
             soldeValue.Modified = true;
-            soldeValue.Text = client.GetBalance(student);
+            soldeValue.Text = balance.ToString();
             soldeValue.Modified = false;
 
             soldeValue.Modified = true;

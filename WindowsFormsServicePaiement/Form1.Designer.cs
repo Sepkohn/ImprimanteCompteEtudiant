@@ -218,6 +218,7 @@ namespace WindowsFormsServicePaiement
             this.copyAvailable.Name = "copyAvailable";
             this.copyAvailable.Size = new System.Drawing.Size(100, 26);
             this.copyAvailable.TabIndex = 20;
+            this.copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
             this.copyAvailable.TextChanged += new System.EventHandler(this.copyAvailable_TextChanged);
             // 
             // label9
@@ -250,7 +251,8 @@ namespace WindowsFormsServicePaiement
             this.soldeValue.Size = new System.Drawing.Size(100, 24);
             this.soldeValue.TabIndex = 23;
             this.soldeValue.Text = student.Balance.ToString();
-            this.soldeValue.TextChanged += new System.EventHandler(this.soldeValue_TextChanged);
+            this.soldeValue.Enabled = false;
+//            this.soldeValue.TextChanged += new System.EventHandler(this.soldeValue_TextChanged);
             // 
             // closeTransaction
             // 
