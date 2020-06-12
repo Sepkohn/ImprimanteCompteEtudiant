@@ -69,13 +69,10 @@ namespace WcfServicePayment
 
             UserManager.UpdateBalance(user);
 
-            //          UpdateCopy(user, 0, false);
-
             return GetBalance(user);
-
- //           return User.Balance(user);
         }
 
+        // Utile pour le mode console
         public decimal Print(User user, int nbCopies)
         {
             double cost = PRICE * nbCopies;
@@ -89,23 +86,6 @@ namespace WcfServicePayment
 
         public int UpdateCopy(User user, int nbCopies, bool copyToDo)
         {            
-/*            int copyAvailable = (int)((double)user.Balance / PRICE);
-            
-            if (copyToDo)
-            {
-                double cost = PRICE * nbCopies;
-
-                user.Balance -= (decimal)cost;
-
-                copyAvailable -= nbCopies;
-
-                UserManager.UpdateBalance(user);
-
-//                return user.Balance;
-            }
-
-            return copyAvailable;
-*/
             int copyAvailable = (int)((double)user.Balance / PRICE);
 
             if (copyToDo)
@@ -139,7 +119,6 @@ namespace WcfServicePayment
 
                 UserManager.UpdateBalance(user);
 
-                //                return user.Balance;
             }
 
             return copyAvailable;
