@@ -37,8 +37,8 @@ namespace WindowsFormsServicePaiement
             }
             else
             {
-                Form1 form3 = new Form1(this.student);
-                form3.Show();
+                Form1 form1 = new Form1(this.student);
+                form1.Show();
             }
         }
 
