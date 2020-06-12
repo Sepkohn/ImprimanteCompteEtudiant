@@ -20,10 +20,8 @@ namespace WindowsFormsServicePaiement
         private bool texBox2Bool = false;
         private bool texBox3Bool = false;
 
-        //   Service1 usrManager = new Service1();
         User student = null;
 
-        //  public Service1Client Client { get => client; set => client = value; }
 
         public Form2()
         {
@@ -46,17 +44,17 @@ namespace WindowsFormsServicePaiement
 
         public User getStudent()
         {
-            if (texBox1Bool) // textBox1.Text != null || textBox1.Text.Length < 0)
+            if (texBox1Bool)
             {
                 student = client.GetUserByUsername(textBox1.Text);
             }
 
-            else if (this.texBox2Bool) // textBox1.Text != null || textBox1.TextLength < 0)
+            else if (this.texBox2Bool)
             {
                 this.student = client.GetUserById(int.Parse(textBox2.Text));
             }
 
-            else if (texBox3Bool) // textBox1.Text != null || textBox1.TextLength < 0)
+            else if (texBox3Bool)
             {
                 this.student = client.GetUserByCardId(int.Parse(textBox3.Text));
             }

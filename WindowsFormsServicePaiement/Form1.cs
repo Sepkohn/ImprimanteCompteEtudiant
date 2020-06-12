@@ -20,22 +20,27 @@ namespace WindowsFormsServicePaiement
         public Form1(User student)
         {
             this.student = student;
-            InitializeComponent();
             client = new ServiceReferenceWCFServPayment.Service1Client();
+            InitializeComponent();
+
+            Program.form2.Hide();
+
+
         }
 
         // Bouton d'ajout de copies
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            client.AddCredit(student, int.Parse(addCredit.Text));
+            student.Balance = client.AddCredit(student, int.Parse(addCredit.Text));
 
-            soldeValue.Modified = true;
-            soldeValue.Text = client.GetBalance(student);
-            soldeValue.Modified = false;
+            soldeValue.Text = student.Balance.ToString();
 
-            soldeValue.Modified = true;
-       //     copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
-            soldeValue.Modified = false;
+            addCredit.Text = "";
+            
+            copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
+
+            reset(this);
+
         }
 
         // Bouton de soustraction de copies >> Print
@@ -43,28 +48,11 @@ namespace WindowsFormsServicePaiement
         {
             int soldeCopies = client.UpdateCopy(student, int.Parse(copyToDo.Text), true);
 
-            soldeValue.Modified = true;
+            copyAvailable.Text = soldeCopies.ToString();
 
-            if (soldeCopies < 0)
-            {
-                copyToDo.Text = Math.Abs(soldeCopies).ToString();
-                copyAvailable.Text = "0";
-            }
-            else
-            {
-                copyAvailable.Text = soldeCopies.ToString();
-            }
-            
+            student.Balance = client.GetBalance(student);
 
-            soldeValue.Modified = false;
-
-            Form1.ActiveForm.Activate();  // validate()
-
-            
-            int nbrCopiesToDo = int.Parse(copyToDo.Text);
-            decimal balance = client.Print(student, nbrCopiesToDo); // balance??
-
-             
+            reset(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,9 +61,21 @@ namespace WindowsFormsServicePaiement
             Dispose();
         }
 
+
+        public void reset(Control form)
+        {
+            Form1 NewForm = new Form1(student);
+            NewForm.Show();
+            Dispose(false);
+        }
+
+        public void addCreditForm ()
+        {
+
+        }
         private void soldeValue_TextChanged(object sender, EventArgs e)
         {
-            string solde = client.GetBalance(student);
+            decimal solde = client.GetBalance(student);
             solde.ToString();
         }
 
