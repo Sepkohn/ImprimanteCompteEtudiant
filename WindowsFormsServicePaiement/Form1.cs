@@ -24,7 +24,7 @@ namespace WindowsFormsServicePaiement
             InitializeComponent();
 
             Program.form2.Hide();
-
+            Form2.ActiveForm.Hide();
 
         }
 
