@@ -16,7 +16,7 @@ namespace ClientConsole
             {
                 Console.WriteLine("lancement du programme");
 
-                 User student = myService.GetUserById(256);
+                 User student = myService.GetUserByCardId(256);
 
                 if (student != null)
                 {
@@ -25,11 +25,11 @@ namespace ClientConsole
 
                     student.Balance = myService.AddCredit(student, 20);
 
-                    Console.WriteLine(myService.GetBalance(student));
+                    Console.WriteLine($"Il vous reste un solde de {myService.GetBalance(student)} CHF");
 
                     student.Balance = myService.Print(student, 20);
 
-                    Console.WriteLine(myService.GetBalance(student));
+                    Console.WriteLine($"Il vous reste un solde de {myService.GetBalance(student)} CHF");
                 }
 
                 else {
