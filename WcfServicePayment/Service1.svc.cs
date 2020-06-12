@@ -69,9 +69,11 @@ namespace WcfServicePayment
 
             UserManager.UpdateBalance(user);
 
-  //          UpdateCopy(user, 0, false);
+            //          UpdateCopy(user, 0, false);
 
-            return user.Balance;
+            return GetBalance(user);
+
+ //           return User.Balance(user);
         }
 
         public decimal Print(User user, int nbCopies)
@@ -87,7 +89,7 @@ namespace WcfServicePayment
 
         public int UpdateCopy(User user, int nbCopies, bool copyToDo)
         {            
-            int copyAvailable = (int)((double)user.Balance / PRICE);
+/*            int copyAvailable = (int)((double)user.Balance / PRICE);
             
             if (copyToDo)
             {
@@ -103,10 +105,54 @@ namespace WcfServicePayment
             }
 
             return copyAvailable;
+*/
+            int copyAvailable = (int)((double)user.Balance / PRICE);
+
+            if (copyToDo)
+            {
+                double cost = PRICE * nbCopies;
+                var BalanceInit = GetBalance(user);
+                var balanceTemp = GetBalance(user);
+                bool validBalance;
+
+                balanceTemp -= (decimal)cost;
+
+                if (!positive(balanceTemp))
+                {
+                    validBalance = positive(balanceTemp);
+
+                    while (!validBalance)
+                    {
+                        balanceTemp = BalanceInit;
+                        nbCopies -= 1;
+                        cost = PRICE * nbCopies;
+
+                        balanceTemp -= (decimal)cost;
+                        validBalance = positive(balanceTemp);
+                    }
+
+                }
+
+                user.Balance = balanceTemp;
+
+                copyAvailable -= nbCopies;
+
+                UserManager.UpdateBalance(user);
+
+                //                return user.Balance;
+            }
+
+            return copyAvailable;
+
         }
 
-     
-        public string GetBalance(User user)
+        public bool positive(Decimal balance)
+        {
+            if (balance < 0) { return false; }
+            return true;
+        }
+
+        public decimal GetBalance(User user)
         {
             return UserManager.GetBalance(user);
         }

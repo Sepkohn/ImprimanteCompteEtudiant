@@ -37,9 +37,13 @@ namespace BLL
             return UserDb.UpdateBalance(user);
         }
 
-        public String GetBalance(User user)
+        public decimal GetBalance(User user)
         {
-            return $"Vous avez un solde de CHF {user.Balance}, soit {(int)(user.Balance / (decimal)0.08)} photocopies";
+            user = GetUserById(user.Uid);
+
+            return user.Balance;
+
+            //return $"Vous avez un solde de CHF {user.Balance}, soit {(int)(user.Balance / (decimal)0.08)} photocopies";
         }
 
     }

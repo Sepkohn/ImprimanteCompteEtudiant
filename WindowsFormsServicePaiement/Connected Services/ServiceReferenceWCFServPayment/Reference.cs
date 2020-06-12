@@ -52,10 +52,10 @@ namespace WindowsFormsServicePaiement.ServiceReferenceWCFServPayment {
         System.Threading.Tasks.Task<decimal> AddCreditAsync(DTO.User user, decimal credit);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBalance", ReplyAction="http://tempuri.org/IService1/GetBalanceResponse")]
-        string GetBalance(DTO.User user);
+        decimal GetBalance(DTO.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBalance", ReplyAction="http://tempuri.org/IService1/GetBalanceResponse")]
-        System.Threading.Tasks.Task<string> GetBalanceAsync(DTO.User user);
+        System.Threading.Tasks.Task<decimal> GetBalanceAsync(DTO.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Print", ReplyAction="http://tempuri.org/IService1/PrintResponse")]
         decimal Print(DTO.User user, int nbCopies);
@@ -145,11 +145,11 @@ namespace WindowsFormsServicePaiement.ServiceReferenceWCFServPayment {
             return base.Channel.AddCreditAsync(user, credit);
         }
         
-        public string GetBalance(DTO.User user) {
+        public decimal GetBalance(DTO.User user) {
             return base.Channel.GetBalance(user);
         }
         
-        public System.Threading.Tasks.Task<string> GetBalanceAsync(DTO.User user) {
+        public System.Threading.Tasks.Task<decimal> GetBalanceAsync(DTO.User user) {
             return base.Channel.GetBalanceAsync(user);
         }
         

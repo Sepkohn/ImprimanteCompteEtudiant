@@ -93,6 +93,7 @@ namespace WindowsFormsServicePaiement
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 0;
+
             // 
             // buttonPlus
             // 
@@ -113,6 +114,7 @@ namespace WindowsFormsServicePaiement
             this.buttonMoins.Text = "Print";
             this.buttonMoins.UseVisualStyleBackColor = true;
             this.buttonMoins.Click += new System.EventHandler(this.buttonMoins_Click);
+
             // 
             // label4
             // 
@@ -134,6 +136,7 @@ namespace WindowsFormsServicePaiement
             this.studentName.Size = new System.Drawing.Size(218, 24);
             this.studentName.TabIndex = 1;
             this.studentName.Text = student.Username;
+            this.studentName.Enabled = false;
             // 
             // addCredit
             // 
@@ -171,6 +174,7 @@ namespace WindowsFormsServicePaiement
             this.studentID.Size = new System.Drawing.Size(160, 24);
             this.studentID.TabIndex = 15;
             this.studentID.Text = student.Uid.ToString();
+            this.studentID.Enabled = false;
             // 
             // label5
             // 
@@ -210,6 +214,7 @@ namespace WindowsFormsServicePaiement
             this.studentIdCard.Size = new System.Drawing.Size(160, 24);
             this.studentIdCard.TabIndex = 19;
             this.studentIdCard.Text = student.CardId.ToString();
+            this.studentIdCard.Enabled = false;
             // 
             // copyAvailable
             // 
@@ -219,7 +224,7 @@ namespace WindowsFormsServicePaiement
             this.copyAvailable.Size = new System.Drawing.Size(100, 26);
             this.copyAvailable.TabIndex = 20;
             this.copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
-            this.copyAvailable.TextChanged += new System.EventHandler(this.copyAvailable_TextChanged);
+            this.copyAvailable.Enabled = false;
             // 
             // label9
             // 
@@ -250,9 +255,8 @@ namespace WindowsFormsServicePaiement
             this.soldeValue.Name = "soldeValue";
             this.soldeValue.Size = new System.Drawing.Size(100, 24);
             this.soldeValue.TabIndex = 23;
-            this.soldeValue.Text = student.Balance.ToString();
+            this.soldeValue.Text = client.GetBalance(student).ToString();
             this.soldeValue.Enabled = false;
-//            this.soldeValue.TextChanged += new System.EventHandler(this.soldeValue_TextChanged);
             // 
             // closeTransaction
             // 

@@ -12,7 +12,7 @@ namespace BLL
 
         int UpdateBalance(User user);
 
-        string GetBalance(User user);
+        decimal GetBalance(User user);
 
     }
 }
