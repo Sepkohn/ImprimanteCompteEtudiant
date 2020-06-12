@@ -22,6 +22,10 @@ namespace WindowsFormsServicePaiement
             this.student = student;
             client = new ServiceReferenceWCFServPayment.Service1Client();
             InitializeComponent();
+            //            Program.form2.Close(); // Dispose();
+            //           Program.form2.NewForm.Dispose();
+//            soldeValue.Enabled = false;
+//            copyAvailable.Enabled = false;
 
         }
 
@@ -30,54 +34,74 @@ namespace WindowsFormsServicePaiement
         {
             Decimal balance = client.AddCredit(student, int.Parse(addCredit.Text));
 
-            soldeValue.Modified = true;
+ //           soldeValue.Enabled = true;
             soldeValue.Text = balance.ToString();
-            soldeValue.Modified = false;
+//            soldeValue.Enabled = false;
 
-            soldeValue.Modified = true;
-       //     copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
-            soldeValue.Modified = false;
+            addCredit.Text = "0";
+
+ //           copyAvailable.Enabled = true;
+            copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
+//            soldeValue.Enabled = false;
+
+ //           ActiveForm.Activate();  // validate()
+
         }
 
         // Bouton de soustraction de copies >> Print
         private void buttonMoins_Click(object sender, EventArgs e)
         {
-            int soldeCopies = client.UpdateCopy(student, int.Parse(copyToDo.Text), true);
+            int nbrCopiesToDo = int.Parse(copyToDo.Text);
+ //           decimal balance = client.Print(student, nbrCopiesToDo); // balance??
 
-            soldeValue.Modified = true;
+            int soldeCopies = client.UpdateCopy(student, nbrCopiesToDo, true);
 
-            if (soldeCopies < 0)
+ //           soldeValue.Enabled = true;
+            soldeValue.Text = student.Balance.ToString();
+ //           soldeValue.Enabled = false;
+
+            if (soldeCopies < 1 && student.Balance > 0)
             {
                 copyToDo.Text = Math.Abs(soldeCopies).ToString();
+//                copyAvailable.Enabled = true;
                 copyAvailable.Text = "0";
+//                copyAvailable.Enabled = false;
             }
+            else if (soldeCopies < 1 && student.Balance < 0)
+            {
+                copyToDo.Text = Math.Abs(soldeCopies).ToString();
+//                copyAvailable.Enabled = true;
+                copyAvailable.Text = "0";
+//                copyAvailable.Enabled = false;
+            }
+
             else
             {
+                copyToDo.Text = "0";
+                //                copyAvailable.Enabled = true;
                 copyAvailable.Text = soldeCopies.ToString();
+//                copyAvailable.Enabled = false;
+
             }
-            
 
-            soldeValue.Modified = false;
+           
 
-            Form1.ActiveForm.Activate();  // validate()
+ //           ActiveForm.Activate();  // validate()
 
-            
-            int nbrCopiesToDo = int.Parse(copyToDo.Text);
-            decimal balance = client.Print(student, nbrCopiesToDo); // balance??
-
-             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.form2.Dispose();
-            Dispose();
+            Program.form2.Close();
+ //           Dispose();
+            Close();
         }
 
         private void soldeValue_TextChanged(object sender, EventArgs e)
         {
-            string solde = client.GetBalance(student);
-            solde.ToString();
+            //           solde.ToString();
+
+            soldeValue.Text = student.Balance.ToString();
         }
 
         private void addCredit_TextChanged(object sender, EventArgs e)
@@ -87,7 +111,7 @@ namespace WindowsFormsServicePaiement
 
         private void copyAvailable_TextChanged(object sender, EventArgs e)
         {
-          
+            copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString(); 
         }
 
         private void copyToDo_TextChanged(object sender, EventArgs e)

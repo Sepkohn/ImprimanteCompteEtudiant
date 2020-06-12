@@ -65,6 +65,8 @@ namespace WindowsFormsServicePaiement
             this.label10 = new System.Windows.Forms.Label();
             this.soldeValue = new System.Windows.Forms.TextBox();
             this.closeTransaction = new System.Windows.Forms.Button();
+            this.soldeVal = new System.Windows.Forms.Label();
+            this.CopyAvail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // etudiant
@@ -133,7 +135,8 @@ namespace WindowsFormsServicePaiement
             this.studentName.ReadOnly = true;
             this.studentName.Size = new System.Drawing.Size(218, 24);
             this.studentName.TabIndex = 1;
-            this.studentName.Text = student.Username;
+            this.studentName.Text = student.Username.ToString();
+            this.studentName.Enabled = false;
             // 
             // addCredit
             // 
@@ -170,7 +173,8 @@ namespace WindowsFormsServicePaiement
             this.studentID.Name = "studentID";
             this.studentID.Size = new System.Drawing.Size(160, 24);
             this.studentID.TabIndex = 15;
-            this.studentID.Text = student.Uid.ToString();
+            this.studentID.Text = student.Id.ToString();
+            this.studentID.Enabled = false;
             // 
             // label5
             // 
@@ -209,7 +213,8 @@ namespace WindowsFormsServicePaiement
             this.studentIdCard.Name = "studentIdCard";
             this.studentIdCard.Size = new System.Drawing.Size(160, 24);
             this.studentIdCard.TabIndex = 19;
-            this.studentIdCard.Text = student.CardId.ToString();
+            this.studentIdCard.Text = student.Id.ToString();
+            this.studentIdCard.Enabled = false;
             // 
             // copyAvailable
             // 
@@ -218,8 +223,8 @@ namespace WindowsFormsServicePaiement
             this.copyAvailable.Name = "copyAvailable";
             this.copyAvailable.Size = new System.Drawing.Size(100, 26);
             this.copyAvailable.TabIndex = 20;
-            this.copyAvailable.Text = client.UpdateCopy(student, 0, false).ToString();
-            this.copyAvailable.TextChanged += new System.EventHandler(this.copyAvailable_TextChanged);
+            this.copyAvailable.Text += client.UpdateCopy(student, 0, false).ToString();
+//            this.copyAvailable.TextChanged += new System.EventHandler(this.copyAvailable_TextChanged);
             // 
             // label9
             // 
@@ -250,8 +255,7 @@ namespace WindowsFormsServicePaiement
             this.soldeValue.Name = "soldeValue";
             this.soldeValue.Size = new System.Drawing.Size(100, 24);
             this.soldeValue.TabIndex = 23;
-            this.soldeValue.Text = student.Balance.ToString();
-            this.soldeValue.Enabled = false;
+            this.soldeValue.Text += student.Balance.ToString();
 //            this.soldeValue.TextChanged += new System.EventHandler(this.soldeValue_TextChanged);
             // 
             // closeTransaction
@@ -265,11 +269,45 @@ namespace WindowsFormsServicePaiement
             this.closeTransaction.UseVisualStyleBackColor = true;
             this.closeTransaction.Click += new System.EventHandler(this.button1_Click);
             // 
+            // soldeVal
+            // 
+            this.soldeVal.AutoSize = true;
+            this.soldeVal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.soldeVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.soldeVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soldeVal.Location = new System.Drawing.Point(294, 204);
+            this.soldeVal.MaximumSize = new System.Drawing.Size(100, 26);
+            this.soldeVal.MinimumSize = new System.Drawing.Size(100, 26);
+            this.soldeVal.Name = "soldeVal";
+            this.soldeVal.Size = new System.Drawing.Size(100, 26);
+            this.soldeVal.TabIndex = 25;
+            this.soldeVal.Text = "soldeVal";
+            this.soldeVal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.soldeVal.Text = student.Balance.ToString();
+            // 
+            // CopyAvail
+            // 
+            this.CopyAvail.AutoSize = true;
+            this.CopyAvail.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.CopyAvail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CopyAvail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyAvail.Location = new System.Drawing.Point(273, 312);
+            this.CopyAvail.MaximumSize = new System.Drawing.Size(100, 26);
+            this.CopyAvail.MinimumSize = new System.Drawing.Size(100, 26);
+            this.CopyAvail.Name = "CopyAvail";
+            this.CopyAvail.Size = new System.Drawing.Size(100, 26);
+            this.CopyAvail.TabIndex = 26;
+            this.CopyAvail.Text = "CopyAvail";
+            this.CopyAvail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CopyAvail.Text = client.UpdateCopy(student, 0, false).ToString();
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CopyAvail);
+            this.Controls.Add(this.soldeVal);
             this.Controls.Add(this.closeTransaction);
             this.Controls.Add(this.soldeValue);
             this.Controls.Add(this.label10);
@@ -318,6 +356,8 @@ namespace WindowsFormsServicePaiement
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox soldeValue;
         private System.Windows.Forms.Button closeTransaction;
+        private System.Windows.Forms.Label soldeVal;
+        private System.Windows.Forms.Label CopyAvail;
     }
 }
 

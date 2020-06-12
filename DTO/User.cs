@@ -10,7 +10,7 @@ namespace DTO
     {
         public int Uid { get; set; }
 
-        public int CardId { get; set; }
+        public int Id { get; set; }
 
         public string Username { get; set; }
 
@@ -18,7 +18,7 @@ namespace DTO
 
         public override string ToString()
         {
-            return $"Uid : {Uid}, CardId : {CardId},  Username : {Username}, Balance : {Balance}";
+            return $"Uid : {Uid}, CardId : {Id},  Username : {Username}, Balance : {Balance}";
         }
     }
 }

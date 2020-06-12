@@ -22,11 +22,6 @@ namespace WindowsFormsServicePaiement
 
             Application.Run(mainForm: form2 = new Form2());
 
-            while (form2.getStudent() == null)
-            {
-                Application.Run(mainForm: form2);
-            } 
-
         }
     }
 }

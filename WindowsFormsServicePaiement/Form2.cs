@@ -53,7 +53,7 @@ namespace WindowsFormsServicePaiement
 
             else if (this.texBox2Bool) // textBox1.Text != null || textBox1.TextLength < 0)
             {
-                this.student = client.GetUserById(int.Parse(textBox2.Text));
+                this.student = client.GetUserById((int)int.Parse(textBox2.Text));
             }
 
             else if (texBox3Bool) // textBox1.Text != null || textBox1.TextLength < 0)

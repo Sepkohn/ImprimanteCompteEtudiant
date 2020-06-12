@@ -92,21 +92,46 @@ namespace WcfServicePayment
             if (copyToDo)
             {
                 double cost = PRICE * nbCopies;
+                var BalanceInit = user.Balance;
+                var balanceTemp = user.Balance;
+                bool validBalance;
 
-                user.Balance -= (decimal)cost;
+                balanceTemp -= (decimal)cost;
+
+                if(!positive(balanceTemp))
+                {
+                    validBalance = positive(balanceTemp);
+
+                    while (!validBalance)
+                    {
+                        balanceTemp = BalanceInit;
+                        nbCopies -= 1;
+                        cost = PRICE * nbCopies;
+
+                        balanceTemp -= (decimal)cost;
+                        validBalance = positive(balanceTemp);
+                    }
+
+                }
+
+                user.Balance = balanceTemp;
 
                 copyAvailable -= nbCopies;
 
                 UserManager.UpdateBalance(user);
 
-//                return user.Balance;
             }
 
             return copyAvailable;
         }
 
-     
-        public string GetBalance(User user)
+     public bool positive(Decimal balance)
+        { 
+            if(balance < 0) { return false; }
+            return true;
+        }
+        
+       public string GetBalance(User user)
         {
             return UserManager.GetBalance(user);
         }

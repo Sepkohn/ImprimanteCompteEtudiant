@@ -41,7 +41,7 @@ namespace DAL
                             {
                                 Uid = (int)dr["Uid"],
 
-                                CardId = (int)dr["CardId"],
+                                Id = (int)dr["CardId"],
 
                                 Username = (string)dr["Username"],
 
@@ -83,7 +83,7 @@ namespace DAL
 
                             user.Uid = (int)dr["Uid"];
 
-                            user.CardId = (int)dr["CardId"];
+                            user.Id = (int)dr["CardId"];
 
                             user.Username = (string)dr["Username"];
 
@@ -122,7 +122,7 @@ namespace DAL
 
                             user.Uid = (int)dr["Uid"];
 
-                            user.CardId = (int)dr["CardId"];
+                            user.Id = (int)dr["CardId"];
 
                             user.Username = (string)dr["Username"];
 
