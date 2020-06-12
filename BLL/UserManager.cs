@@ -42,8 +42,6 @@ namespace BLL
             user = GetUserById(user.Uid);
 
             return user.Balance;
-
-            //return $"Vous avez un solde de CHF {user.Balance}, soit {(int)(user.Balance / (decimal)0.08)} photocopies";
         }
 
     }
